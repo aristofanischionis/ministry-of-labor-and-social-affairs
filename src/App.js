@@ -7,29 +7,14 @@ import {
 } from "react-router-dom"
 // import './App.css';
 import logo from "./images/logo.png"
-import { Menu, Dropdown, Image } from 'semantic-ui-react'
+import { Menu, Dropdown, Image, Icon } from 'semantic-ui-react'
 import Home from './Home'
 import Contact from './Contact'
 import About from './About'
-// <div className="App">
-//   <header className="App-header">
-//     <img src={logo} className="App-logo" alt="logo" />
-//     <p>
-//       Edit <code>src/App.js</code> and save to reload.
-//     </p>
-//     <a
-//       className="App-link"
-//       href="https://reactjs.org"
-//       target="_blank"
-//       rel="noopener noreferrer"
-//     >
-//       Learn React
-//     </a>
-//   </header>
-// </div>
+
 const countryOptions = [
-  { key: 'gr', value: 'gr', flag: 'gr', text: 'Ελληνικά' },
-  { key: 'us', value: 'us', flag: 'us', text: 'English' }
+  { key: 'gr', value: 'gr', flag: 'gr' },
+  { key: 'us', value: 'us', flag: 'us' }
 ]
 
 function App() {
@@ -49,15 +34,14 @@ function App() {
               <Menu.Item>
                 <Link to="/contact">Contact</Link>
               </Menu.Item>
-              <Dropdown
-                search
-                selection
-                options={countryOptions}
-                placeholder='Language'
-              />
+              <Menu.Item>
+                <Dropdown
+                  options={countryOptions}
+                  defaultValue={countryOptions[0].value}
+                />
+              </Menu.Item>
             </Menu.Menu>
           </Menu>
-  
           {/* A <Switch> looks through its children <Route>s and
               renders the first one that matches the current URL. */}
           <Switch>
