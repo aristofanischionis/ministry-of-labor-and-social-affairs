@@ -4,6 +4,7 @@ import { Menu, Dropdown, Image} from 'semantic-ui-react'
 import Home from '../Home'
 import Contact from '../Contact'
 import About from '../About'
+import Auth from '../Auth'
 import {
   BrowserRouter as Router,
   Switch,
@@ -37,6 +38,9 @@ export default function Navigation() {
                 options={countryOptions}
                 defaultValue={countryOptions[0].value}
               />
+            </Menu.Item>
+            <Menu.Item>
+              <Auth />
             </Menu.Item>
           </Menu.Menu>
         </Menu>

@@ -3,9 +3,8 @@ import "./index.css";
 import logo from "../images/logo.png"
 import {Image} from 'semantic-ui-react'
 
-function Footer() {
+export default function Footer() {
   return (
-
     <div class="main-footer">
       <div class="container">
         <div class="row">
@@ -21,18 +20,15 @@ function Footer() {
             </h4>
           </div>
           <div class="column">
-            <h3>KATI ALLO</h3>
+            <h3>NEXT COLUMN</h3>
             <h4 class="list-unstyled">
               <li>new data</li>
               <li>other new data</li>
-              <li>Aristofani eisai kavla</li>
+              <li>data</li>
             </h4>
           </div>
         </div>
       </div>
     </div>
-    
   );
 }
-
-export default Footer;
