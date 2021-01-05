@@ -5,23 +5,23 @@ import {Image} from 'semantic-ui-react'
 
 export default function Footer() {
   return (
-    <div class="main-footer">
-      <div class="container">
-        <div class="row">
-          <div class="column-img">
+    <div className="main-footer">
+      <div className="container">
+        <div className="row">
+          <div className="column-img">
             <Image src={logo} />
           </div>
-          <div class="column">
+          <div className="column">
             <h3>ΥΠΟΥΡΓΕΙΟ ΕΡΓΑΣΙΑΣ</h3>
-            <h4 class="list-unstyled">
+            <h4 className="list-unstyled">
               <li>2105555555</li>
               <li>Αθήνα, Αττική</li>
               <li>Παπασταύρου 21</li>
             </h4>
           </div>
-          <div class="column">
+          <div className="column">
             <h3>NEXT COLUMN</h3>
-            <h4 class="list-unstyled">
+            <h4 className="list-unstyled">
               <li>new data</li>
               <li>other new data</li>
               <li>data</li>

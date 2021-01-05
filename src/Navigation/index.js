@@ -3,7 +3,7 @@ import logo from "../images/logo.png"
 import { Menu, Dropdown, Image} from 'semantic-ui-react'
 import Home from '../Home'
 import Contact from '../Contact'
-import About from '../About'
+import Info from '../Info'
 import Auth from '../Auth'
 import {
   BrowserRouter as Router,
@@ -17,6 +17,12 @@ const countryOptions = [
   { key: 'us', value: 'us', flag: 'us' }
 ]
 
+const options = [
+  { key: 'general', text: 'Γενικές πληροφορίες', as: Link, to: '/Info#general' },
+  { key: 'employer', text: 'Για τον Εργοδότη', as: Link, to: '/Info#employer' },
+  { key: 'employee', text: 'Για τον Εργαζόμενο', as: Link, to: '/Info#employee' },
+]
+
 export default function Navigation() {
     return (
       <Router>
@@ -28,7 +34,7 @@ export default function Navigation() {
           </Menu.Item>
           <Menu.Menu position='right'>
             <Menu.Item>
-              <Link to="/about">About</Link>
+              <Dropdown text='Πληροφορίες για τον COVID' color="blue" options={options}/>                
             </Menu.Item>
             <Menu.Item>
               <Link to="/contact">Contact</Link>
@@ -48,8 +54,8 @@ export default function Navigation() {
         {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/about">
-            <About />
+          <Route path="/Info">
+            <Info />
           </Route>
           <Route path="/contact">
             <Contact />
