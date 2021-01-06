@@ -1,34 +1,83 @@
-import React from "react";
-import "./index.css";
-import logo from "../images/logo.png"
-import {Image} from 'semantic-ui-react'
+import React  from 'react';
+import { FooterSection , FooterDesc, Row, Col} from './style.js'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
-export default function Footer() {
-  return (
-    <div className="main-footer">
-      <div className="container">
-        <div className="row">
-          <div className="column-img">
-            <Image src={logo} />
-          </div>
-          <div className="column">
-            <h3>ΥΠΟΥΡΓΕΙΟ ΕΡΓΑΣΙΑΣ</h3>
-            <h4 className="list-unstyled">
-              <li>2105555555</li>
-              <li>Αθήνα, Αττική</li>
-              <li>Παπασταύρου 21</li>
-            </h4>
-          </div>
-          <div className="column">
-            <h3>NEXT COLUMN</h3>
-            <h4 className="list-unstyled">
-              <li>new data</li>
-              <li>other new data</li>
-              <li>data</li>
-            </h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+const Footer = () => {
+    return (
+      <Router>
+        <FooterSection>
+            <Row>
+              <Col size={1}>
+                <h4><u>Contact</u></h4>
+              </Col>
+              <Col size={1}>
+                <h4><u>Ηours of operation</u></h4>
+              </Col>
+              <Col size={1}>
+                <h4><u>Insurance entity</u></h4>
+              </Col>              
+              <Col size={1}>
+                <h4><u>Useful links</u></h4>
+              </Col>
+            </Row>
+            <Row>
+              <Col size={1}>
+                +30 213 1516649
+              </Col>
+              <Col size={1}>
+                Tuesday - Friday
+                round-the-clock
+              </Col>
+              <Col size={1}>
+                <Col>
+                  <p><Link to="/">EFKA</Link></p>
+                </Col>
+              </Col>              
+              <Col size={1}>
+                <Col>
+                  <p><Link to="/">Link 1</Link></p>
+                </Col>
+              </Col>
+            </Row>   
+            <Row>
+              <Col size={1}></Col>
+              <Col size={1}></Col>
+              <Col size={1}>
+                <Col>
+                  <p><Link to="/">IKA</Link></p>
+                </Col>
+              </Col>              
+              <Col size={1}>
+                <Col>
+                  <p><Link to="/">Link 2</Link></p>
+                </Col>
+              </Col>
+            </Row>
+            <Row>
+              <Col size={1}></Col>
+              <Col size={1}></Col>
+              <Col size={1}>
+                <Col>
+                  <p><Link to="/">OKANA</Link></p>
+                </Col>
+              </Col>              
+              <Col size={1}>
+                <Col>
+                  <p><Link to="/">Link 3</Link></p>
+                </Col>
+              </Col>
+            </Row>
+            <FooterDesc> <u>copyright &copy; 2020 by University of Athens</u> </FooterDesc>
+        </FooterSection>
+
+
+        </Router>
+    )
 }
+
+export default Footer;
