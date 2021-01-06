@@ -3,8 +3,13 @@ import styled from 'styled-components'
 export const FooterSection = styled.footer`
     text-align: center;
     padding: 10px 0;
+    margin-top: 20px;
+    margin-bottom: 0;
     background-color: #F8F8F8;
-    filter: drop-shadow(0 -6mm 4mm #E9E9E9);
+    filter: drop-shadow(0 -4mm 2mm #E9E9E9);
+    position: sticky;
+    z-index: 9999;
+    bottom: 0;
 `
 export const FooterOut = styled.div`
     filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210))

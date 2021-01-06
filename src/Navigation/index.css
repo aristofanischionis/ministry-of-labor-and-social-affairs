@@ -1,0 +1,9 @@
+.colored {
+    background-color: #F3F3F3 !important;
+}
+
+.sticky-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}

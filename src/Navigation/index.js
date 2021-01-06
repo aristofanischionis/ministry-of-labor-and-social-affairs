@@ -1,10 +1,11 @@
-// import React from "react";
+import React from "react";
 import logo from "../images/logo.png"
 import { Menu, Dropdown, Image} from 'semantic-ui-react'
 import Home from '../Home'
 import Contact from '../Contact'
-import Info from '../Info'
+import CovidInfo from '../CovidInfo'
 import Auth from '../Auth'
+import './index.css'
 import {
   BrowserRouter as Router,
   Switch,
@@ -18,44 +19,46 @@ const countryOptions = [
 ]
 
 const options = [
-  { key: 'general', text: 'Γενικές πληροφορίες', as: Link, to: '/Info#general' },
-  { key: 'employer', text: 'Για τον Εργοδότη', as: Link, to: '/Info#employer' },
-  { key: 'employee', text: 'Για τον Εργαζόμενο', as: Link, to: '/Info#employee' },
+  { key: 'general', text: 'Γενικές πληροφορίες', as: Link, to: '/COVID-info#general' },
+  { key: 'employer', text: 'Για τον Εργοδότη', as: Link, to: '/COVID-info#employer' },
+  { key: 'employee', text: 'Για τον Εργαζόμενο', as: Link, to: '/COVID-info#employee' },
 ]
 
 export default function Navigation() {
     return (
       <Router>
-        <Menu stackable>
-          <Menu.Item>
-            <Link to="/">
-              <Image src={logo} />
-            </Link>
-          </Menu.Item>
-          <Menu.Menu position='right'>
+        <div className="sticky-navbar">
+          <Menu stackable>
             <Menu.Item>
-              <Dropdown text='Πληροφορίες για τον COVID' color="blue" options={options}/>                
+              <Link to="/">
+                <Image src={logo} size="medium" />
+              </Link>
             </Menu.Item>
-            <Menu.Item>
-              <Link to="/contact">Contact</Link>
-            </Menu.Item>
-            <Menu.Item>
-              <Dropdown
-                options={countryOptions}
-                defaultValue={countryOptions[0].value}
-              />
-            </Menu.Item>
-            <Menu.Item>
-              <Auth />
-            </Menu.Item>
-          </Menu.Menu>
-        </Menu>
+            <Menu.Menu position='right'>
+              <Menu.Item className="colored">
+                <Dropdown text='Πληροφορίες για τον COVID' options={options} />                
+              </Menu.Item>
+              <Menu.Item>
+                <Link to="/contact">Contact</Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Dropdown
+                  options={countryOptions}
+                  defaultValue={countryOptions[0].value}
+                />
+              </Menu.Item>
+              <Menu.Item>
+                {/* <Auth /> */}
+              </Menu.Item>
+            </Menu.Menu>
+          </Menu>
+        </div>
 
         {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/Info">
-            <Info />
+          <Route path="/COVID-info">
+            <CovidInfo />
           </Route>
           <Route path="/contact">
             <Contact />
