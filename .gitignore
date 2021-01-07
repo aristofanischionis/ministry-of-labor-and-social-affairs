@@ -24,3 +24,9 @@ yarn-error.log*
 
 # cache
 .eslintcache
+
+.vscode/
+*.log
+dump.rdb
+.env
+*.env
