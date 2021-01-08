@@ -1,0 +1,10 @@
+{
+    "db":{
+        "host": "localhost",
+        "user": "root",
+        "password": "rootpsw",
+        "database": "ministryDB"
+    }
+
+
+}
