@@ -8,6 +8,8 @@ import Login from '../auth/Login'
 import Signup from '../auth/Signup'
 import Done from '../auth/Done'
 import NotFoundPage from '../NotFoundPage'
+import SearchBar from '../SearchBar'
+import Auth from '../auth'
 
 import './index.css'
 import {
@@ -22,11 +24,11 @@ const countryOptions = [
   { key: 'us', value: 'us', flag: 'us' }
 ]
 
-const options = [
-  { key: 'general', text: 'Γενικές πληροφορίες', as: Link, to: '/COVID-info#general' },
-  { key: 'employer', text: 'Για τον Εργοδότη', as: Link, to: '/COVID-info#employer' },
-  { key: 'employee', text: 'Για τον Εργαζόμενο', as: Link, to: '/COVID-info#employee' },
-]
+// const options = [
+//   { key: 'general', text: 'Γενικές πληροφορίες', as: Link, to: '/COVID-info#general' },
+//   { key: 'employer', text: 'Για τον Εργοδότη', as: Link, to: '/COVID-info#employer' },
+//   { key: 'employee', text: 'Για τον Εργαζόμενο', as: Link, to: '/COVID-info#employee' },
+// ]
 
 export default function Navigation() {
     return (
@@ -39,11 +41,14 @@ export default function Navigation() {
               </Link>
             </Menu.Item>
             <Menu.Menu position='right'>
-              <Menu.Item className="colored">
-                <Dropdown text='Πληροφορίες για τον COVID' options={options} />                
+              {/* <Menu.Item className="colored">
+                <Dropdown text='Πληροφορίες COVID' options={options} />                
+              </Menu.Item> */}
+              <Menu.Item>
+                <Link to="/COVID-info">Πληροφορίες COVID</Link>
               </Menu.Item>
               <Menu.Item>
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact">Επικοινωνία</Link>
               </Menu.Item>
               <Menu.Item>
                 <Dropdown
@@ -52,7 +57,10 @@ export default function Navigation() {
                 />
               </Menu.Item>
               <Menu.Item>
-                {/* <Auth /> */}
+                <SearchBar />
+              </Menu.Item>
+              <Menu.Item>
+                <Auth />
               </Menu.Item>
             </Menu.Menu>
           </Menu>
@@ -70,6 +78,5 @@ export default function Navigation() {
           <Route exact path="*" component={NotFoundPage} />
         </Switch>
       </Router>
-
     )
   }

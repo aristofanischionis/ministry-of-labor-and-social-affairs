@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Form, Message } from "semantic-ui-react";
 import Layout from "./Layout";
-
+// https://github.com/Semantic-Org/Semantic-UI-React/blob/master/docs/src/layouts/LoginLayout.js
+// login help
 export default function Login () {
     return (
       <Layout header="Log in">
@@ -21,13 +22,11 @@ export default function Login () {
           type="password"
           className="auth-input-field"
         />
-
         <Link to="/">
           <Button color="teal" fluid size="huge">
             Login
           </Button>
         </Link>
-
         <Message size="big">
           <Link to="/signup">Not Registered?</Link>
         </Message>

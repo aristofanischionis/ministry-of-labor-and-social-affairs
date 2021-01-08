@@ -8,10 +8,17 @@ import Layout from "./Layout";
 // error message if something is wrong
 export default function Signup() {
     return (
-        <Layout header="Sign up to get started">
-          <Form.Input
+      <Layout header="Sign up to get started">
+        <Form.Input
             fluid
             icon="user"
+            iconPosition="left"
+            placeholder="Full Name"
+            className="auth-input-field"
+        />
+          <Form.Input
+            fluid
+            icon="mail"
             iconPosition="left"
             placeholder="E-mail address"
             className="auth-input-field"
@@ -32,13 +39,11 @@ export default function Signup() {
             type="password"
             className="auth-input-field"
           />
-  
           <Link to="/">
             <Button color="teal" fluid size="huge">
               Sign up
             </Button>
           </Link>
-  
           <Message size="big">
             <Link to="/login">Already Registered?</Link>
           </Message>
