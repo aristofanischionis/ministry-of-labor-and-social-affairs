@@ -78,20 +78,23 @@ export default function CovidInfo() {
                     <Segment>
                         <Container>
                             {/* add date */}
-                            <Header color="blue" textAlign="center">Δεδομένα για τον κορωνοϊό στην Ελλάδα</Header>
-                            <p><i>Updated on: <Icon name="calendar alternate outline" /> {date}</i></p>
+                            <Header as='h5'textAlign="left"><i>Updated on: <Icon name="calendar alternate outline" /> {date}</i></Header>
+                            <Header as="h3" color="blue" textAlign="center" attached="top">Δεδομένα για τον κορωνοϊό στην Ελλάδα</Header>
                             <Statistic.Group widths='three'>
                                 <Statistic color="orange">
-                                    <Statistic.Value>{numberOfTotalCases}| +{numberOfNewCases}</Statistic.Value>
-                                    <Statistic.Label>Επιβεβαιωμενα κρουσματα</Statistic.Label>
+                                    <Statistic.Value><h1 className="style-text-initial">+{numberOfNewCases}</h1></Statistic.Value>
+                                    <Statistic.Value><h3 className="style-text-initial">Σύνολο: {numberOfTotalCases}</h3></Statistic.Value>
+                                    <Statistic.Label className="style-text-initial">Επιβεβαιωμενα κρουσματα</Statistic.Label>
                                 </Statistic>
                                 <Statistic color="red">
-                                    <Statistic.Value>{numberOfTotalDeaths}| +{numberOfNewDeaths}</Statistic.Value>
-                                    <Statistic.Label>Επιβεβαιωμενοι θανατοι</Statistic.Label>
+                                    <Statistic.Value><h1 className="style-text-initial">+{numberOfNewDeaths}</h1></Statistic.Value>
+                                    <Statistic.Value><h3 className="style-text-initial">Σύνολο: {numberOfTotalDeaths}</h3></Statistic.Value>
+                                    <Statistic.Label className="style-text-initial">Επιβεβαιωμενοι θανατοι</Statistic.Label>
                                 </Statistic>
                                 <Statistic color="green" floated>
-                                    <Statistic.Value>{numberOfTotalRecovered}| +{numberOfNewRecovered}</Statistic.Value>
-                                    <Statistic.Label>Εξηλθαν απο τις ΜΕΘ</Statistic.Label>
+                                    <Statistic.Value><h1 className="style-text-initial">+{numberOfNewRecovered}</h1></Statistic.Value>
+                                    <Statistic.Value><h3 className="style-text-initial">Σύνολο: {numberOfTotalRecovered}</h3></Statistic.Value>                                   
+                                    <Statistic.Label className="style-text-initial">Εξηλθαν απο τις ΜΕΘ</Statistic.Label>
                                 </Statistic>
                             </Statistic.Group>
                         </Container>
