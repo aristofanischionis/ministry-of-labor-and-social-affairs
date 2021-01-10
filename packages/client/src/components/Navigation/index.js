@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../../images/logo.png"
-import { Menu, Dropdown, Image} from 'semantic-ui-react'
+import { Menu, Dropdown, Image, Button} from 'semantic-ui-react'
 import Home from '../Home'
 import Contact from '../Contact'
 import CovidInfo from '../CovidInfo'
@@ -44,7 +44,16 @@ export default function Navigation() {
             </Menu.Item>
             <Menu.Menu position='right'>
               <Menu.Item>
-                <Link to="/COVID-info">Πληροφορίες COVID</Link>
+                <Button content='Primary'><Link to="/COVID-info">Πληροφορίες COVID</Link></Button>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to="/ergodotis">Εργοδότης</Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to="/ergazomenos">Εργαζόμενος</Link>
+              </Menu.Item>
+              <Menu.Item>
+                <Link to="/ministry">Υπουργείο</Link>
               </Menu.Item>
               <Menu.Item>
                 <Link to="/contact">Επικοινωνία</Link>
