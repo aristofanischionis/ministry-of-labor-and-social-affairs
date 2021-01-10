@@ -1,20 +1,23 @@
 import React from 'react'
 import { Icon } from 'semantic-ui-react'
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
+import Logout from "./Logout"
+import { getUser } from "../../utils/Common"
 
 export default function Auth() {
+    const user = getUser();
+
     return (
-        // instead of true I have to have a variable loggedin to know if the user is logged in or not
-        // NEEDS a lot of work!!!!!!!
         <div>
-            {true ? (
+            {user ? (
                 <Link to="/login">
-                    <Icon name="user circle" />
+                    <h4>Log In</h4>
                 </Link>
             ) : (
-                <Icon name="user circle" />
-            )
+                <Logout />
+                )
             }
         </div>
     )
 }
+// {/* <Icon name="user circle" /> */}

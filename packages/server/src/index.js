@@ -16,8 +16,7 @@ app.use(cors())
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-// For Testing!
-// console.log("process.env.HOST", process.env.HOST)
+// OAuth2.0
 app.post("/api/register", async (req, res) => {
     // User data to register in db
     const first_name = req.body.first_name
@@ -48,21 +47,18 @@ app.post("/api/login", async (req, res) => {
     const email = req.body.email
     const password = req.body.password
 
-    const sqlLogin = "SELECT id FROM users WHERE email = ? AND password = ? ;" //Checking if user exists in my database.
+    const sqlLogin = "SELECT * FROM users WHERE email = ? AND password = ? ;" //Checking if user exists in my database.
     const input = [email, password]
-    const db_res = db.query(sqlLogin, input , function(err, result, fields){
+    const db_res = db.query(sqlLogin, input, function(err, result, fields){
         if(err){
             throw err
         }
         else{
             const answer = result[0] //If user does not exist this will be undifined and nothing will return. If exists then we will get an answer.
-            //console.log(answer)
+            // console.log(result)
             res.end(JSON.stringify({answer: answer})) 
         }
-        
     })
-
-    
 })
 
 app.listen(3001, () =>{

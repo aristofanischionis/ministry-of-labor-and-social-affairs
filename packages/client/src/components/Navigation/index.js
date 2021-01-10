@@ -1,4 +1,12 @@
 import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
+import PublicRoute from "../../utils/PublicRoute"
+import PrivateRoute from "../../utils/PrivateRoute"
 import logo from "../../images/logo.png"
 import { Menu, Dropdown, Image} from 'semantic-ui-react'
 import Home from '../Home'
@@ -10,16 +18,9 @@ import Done from '../auth/Done'
 import NotFoundPage from '../NotFoundPage'
 import SearchBar from '../SearchBar'
 import Reservation from '../Reservation'
-
+import Dashboard from "../Dashboard";
 import Auth from '../auth'
-
 import './index.css'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom"
 
 const countryOptions = [
   { key: 'gr', value: 'gr', flag: 'gr' },
@@ -66,10 +67,11 @@ export default function Navigation() {
         </div>
 
         {/* A <Switch> looks through its children <Route>s and
-          renders the first one that matches the current URL. */}
+          renders the first one that matches the current URL. */} 
         <Switch>
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
+          <PublicRoute path="/login" component={Login} />
+          <PublicRoute path="/signup" component={Signup} />
+          <PrivateRoute path="/dashboard" component={Dashboard} />
           <Route exact path="/done" component={Done} />
           <Route exact path="/COVID-info" component={CovidInfo} />
           <Route exact path="/contact" component={Contact} />

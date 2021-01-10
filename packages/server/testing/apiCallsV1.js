@@ -18,14 +18,14 @@ async function login()
 {
     //User data here in order to login.
     const push_data = {
-        email: "lalakis@gmail.com",
-        password: "123456"
+        email: "eima",
+        password: "magkas"
     }
     let isValid = false // if he/she is valid he/she can enter. 
     const res = await request.post("http://localhost:3001/api/login" , push_data) //waiting for response
-    //console.log(res.text)
+    // console.log(res)
 
-    if(res.text == '{}') // if responce text is empty then user does not exist.
+    if(res.text == '{}') // if response text is empty then user does not exist.
         isValid = false
     else
         isValid = true
@@ -33,4 +33,4 @@ async function login()
     console.log("User exists: "+isValid)
     return isValid
 }
-register()
+login()
