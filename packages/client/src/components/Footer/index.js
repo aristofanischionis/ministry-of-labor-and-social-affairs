@@ -35,12 +35,12 @@ const Footer = () => {
               </Col>
               <Col size={1}>
                 <Col>
-                  <p><Link to="https://www.efka.gov.gr/el">ΕΦΚΑ</Link></p>
+                  <a href='https://www.efka.gov.gr/el' target="_blank" rel="noopener noreferrer">ΕΦΚΑ</a>
                 </Col>
               </Col>              
               <Col size={1}>
                 <Col>
-                  <p><Link to="/">Link 1</Link></p>
+                  <p><Link to="/FAQ">Συχνές ερωτήσεις</Link></p>
                 </Col>
               </Col>
             </Row>   
@@ -49,12 +49,12 @@ const Footer = () => {
               <Col size={1}></Col>
               <Col size={1}>
                 <Col>
-                  <p><Link to="/">ΙΚΑ</Link></p>
+                <a href='https://www.ika.gr/' target="_blank" rel="noopener noreferrer">ΙΚΑ</a>
                 </Col>
               </Col>              
               <Col size={1}>
                 <Col>
-                  <p><Link to="/">Link 2</Link></p>
+                  <p><Link to="/europe#info">Ε.Ε.</Link></p>
                 </Col>
               </Col>
             </Row>
@@ -63,7 +63,7 @@ const Footer = () => {
               <Col size={1}></Col>
               <Col size={1}>
                 <Col>
-                  <p><Link to="/">ΟΓΑ</Link></p>
+                <a href='https://www.oga.gr/index.php' target="_blank" rel="noopener noreferrer">ΟΓΑ</a>
                 </Col>
               </Col>              
               <Col size={1}>
@@ -74,7 +74,7 @@ const Footer = () => {
               <Col size={1}></Col>
               <Col size={1}>
                 <Col>
-                  <p><Link to="/">ΟΑΕΕ</Link></p>
+                <a href='https://www.oaee.gr/' target="_blank" rel="noopener noreferrer">ΟΑΕΕ</a>
                 </Col>
               </Col>              
               <Col size={1}>

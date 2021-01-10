@@ -5,10 +5,10 @@ async function register()
 {
     //tha prepei na ginetai kalo type checking edw. an kati prepei na dinetai upoxreotika prepei na uparxei elegxos na min einai undifined
     const push_data = {
-        first_name: "Manos",
-        last_name: "manos",
-        email: "manos@gmail.com",
-        password: "123456"
+        first_name: "new register",
+        last_name: "kati",
+        email: "manoass@gmail.com",
+        password: "somepsw"
     }
     const res = await request.post("http://localhost:3001/api/register" , push_data)
     //console.log(res.body.status)
