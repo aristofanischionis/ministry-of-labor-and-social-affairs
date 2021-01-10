@@ -1,20 +1,23 @@
+require('dotenv').config();
+
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const mysql  = require('mysql')
-const config = require('../config/config.json')
 const cors = require('cors')
 
 const db = mysql.createPool({
-    host: config.db.host,
-    user: config.db.user,
-    password: config.db.password,
-    database: config.db.database
+    host: process.env.HOST,
+    user: process.env.DB_USER,
+    password: process.env.PASSWORD,
+    database: process.env.DATABASE
 })
 app.use(cors())
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
+// For Testing!
+// console.log("process.env.HOST", process.env.HOST)
 app.post("/api/register", async (req, res) => {
     // User data to register in db
     const first_name = req.body.first_name
@@ -24,7 +27,7 @@ app.post("/api/register", async (req, res) => {
     
     let isValid = true
 
-    const sqlRegister = "INSERT INTO Users (first_name, last_name, email, password) VALUES (?,?,?,?);"
+    const sqlRegister = "INSERT INTO users (first_name, last_name, email, password) VALUES (?,?,?,?);"
     const input = [first_name, last_name, email, password]
     
     const db_res = db.query(sqlRegister , input)
@@ -45,7 +48,7 @@ app.post("/api/login", async (req, res) => {
     const email = req.body.email
     const password = req.body.password
 
-    const sqlLogin = "SELECT id FROM Users WHERE email = ? AND password = ? ;" //Checking if user exists in my database.
+    const sqlLogin = "SELECT id FROM users WHERE email = ? AND password = ? ;" //Checking if user exists in my database.
     const input = [email, password]
     const db_res = db.query(sqlLogin, input , function(err, result, fields){
         if(err){

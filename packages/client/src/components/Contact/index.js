@@ -1,6 +1,6 @@
 import React from "react";
 import Iframe from 'react-iframe'
-import { Header, Segment, Form, Grid, Menu } from "semantic-ui-react"
+import { Header, Segment, Form, Grid } from "semantic-ui-react"
 import {Link} from "react-router-dom"
 import './index.css'
 // TODO: IMPORTANT
@@ -11,7 +11,7 @@ export default function Contact() {
     const square = { width: 135, height: 135 }
 
     return (
-        <div>
+        <div className="contact-page">
             <Header as="h2" style={{ padding: '1em 0em' }} textAlign="center">Επικοινωνήστε με το Υπουργείο</Header>
             <Segment style={{ padding: '6em 0em' }} vertical>
                 <Grid container stackable verticalAlign='middle'>
@@ -25,6 +25,7 @@ export default function Contact() {
                                 <Form.Input fluid placeholder='Όνομα' />
                                 <Form.Input fluid placeholder='Επίθετο' />
                             </Form.Group>
+                            <Form.Input fluid placeholder='Email' />
                             <Form.TextArea placeholder='Μήνυμα' />
                             <Form.Button circular floated="right" color="blue">Αποστολή</Form.Button>
                         </Form>
@@ -33,8 +34,8 @@ export default function Contact() {
                         <Grid.Row>
                             <Header as='h3'>Τηλέφωνο Επικοινωνίας:</Header>
                             <Header.Subheader>213-1516649</Header.Subheader>
-                            </Grid.Row>
-                        <Grid.Row>
+                        </Grid.Row>
+                        <Grid.Row style={{ padding: '2em 0em' }}>
                             <Header as='h3'>Ωράριο</Header>
                             <Header.Subheader>Τρίτη-Παρασκευή</Header.Subheader>
                             <Header.Subheader>Όλο το 24ωρο</Header.Subheader>
@@ -43,7 +44,7 @@ export default function Contact() {
                     <Grid.Column floated='right' width={4}>
                         <Segment circular style={square} className="reservation-button">
                             <Link to="/reservation">
-                                <Header as='h3'>Κράτηση</Header>
+                                <Header as='h3' color="white">Κράτηση</Header>
                             </Link>
                         </Segment>
                     </Grid.Column>

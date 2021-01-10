@@ -5,9 +5,9 @@ async function register()
 {
     //tha prepei na ginetai kalo type checking edw. an kati prepei na dinetai upoxreotika prepei na uparxei elegxos na min einai undifined
     const push_data = {
-        first_name: "Lakis",
-        last_name: "Lalakis",
-        email: "lalakis@gmail.com",
+        first_name: "Manos",
+        last_name: "manos",
+        email: "manos@gmail.com",
         password: "123456"
     }
     const res = await request.post("http://localhost:3001/api/register" , push_data)
@@ -33,4 +33,4 @@ async function login()
     console.log("User exists: "+isValid)
     return isValid
 }
-login()
+register()
