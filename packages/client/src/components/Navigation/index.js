@@ -9,6 +9,8 @@ import Signup from '../auth/Signup'
 import Done from '../auth/Done'
 import NotFoundPage from '../NotFoundPage'
 import SearchBar from '../SearchBar'
+import Reservation from '../Reservation'
+
 import Auth from '../auth'
 
 import './index.css'
@@ -41,9 +43,6 @@ export default function Navigation() {
               </Link>
             </Menu.Item>
             <Menu.Menu position='right'>
-              {/* <Menu.Item className="colored">
-                <Dropdown text='Πληροφορίες COVID' options={options} />                
-              </Menu.Item> */}
               <Menu.Item>
                 <Link to="/COVID-info">Πληροφορίες COVID</Link>
               </Menu.Item>
@@ -74,6 +73,7 @@ export default function Navigation() {
           <Route exact path="/done" component={Done} />
           <Route exact path="/COVID-info" component={CovidInfo} />
           <Route exact path="/contact" component={Contact} />
+          <Route exact path="/reservation" component={Reservation} />
           <Route exact path="/" component={Home} />
           <Route exact path="*" component={NotFoundPage} />
         </Switch>

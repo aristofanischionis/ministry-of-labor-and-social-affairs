@@ -1,17 +1,19 @@
 import React from "react";
 import Iframe from 'react-iframe'
-import {Header, Segment, Form, Grid} from "semantic-ui-react"
+import { Header, Segment, Form, Grid, Menu } from "semantic-ui-react"
+import {Link} from "react-router-dom"
+import './index.css'
 // TODO: IMPORTANT
 // https://github.com/Semantic-Org/Semantic-UI-React/blob/master/docs/src/layouts/HomepageLayout.js
 // PERFECT LINK TO HELP US WRITE PAGES
 
 export default function Contact() {
-    const square = { width: 175, height: 175 }
+    const square = { width: 135, height: 135 }
 
     return (
         <div>
-            <Segment style={{ padding: '8em 0em' }} vertical>
-                <Header as="h2" textAlign="center">Επικοινωνήστε με το ypakp.gr</Header>
+            <Header as="h2" style={{ padding: '1em 0em' }} textAlign="center">Επικοινωνήστε με το Υπουργείο</Header>
+            <Segment style={{ padding: '6em 0em' }} vertical>
                 <Grid container stackable verticalAlign='middle'>
                     <Grid.Row>
                     <Grid.Column width={6}>
@@ -20,28 +22,29 @@ export default function Contact() {
                         </Header>
                         <Form>
                             <Form.Group widths='equal'>
-                                <Form.Input fluid label='First name' placeholder='Όνομα' />
-                                <Form.Input fluid label='Last name' placeholder='Επίθετο' />
+                                <Form.Input fluid placeholder='Όνομα' />
+                                <Form.Input fluid placeholder='Επίθετο' />
                             </Form.Group>
-                            <Form.TextArea label='About' placeholder='Μήνυμα' />
-                            <Form.Button>Αποστολή</Form.Button>
+                            <Form.TextArea placeholder='Μήνυμα' />
+                            <Form.Button circular floated="right" color="blue">Αποστολή</Form.Button>
                         </Form>
                     </Grid.Column>
                     <Grid.Column width={4}>
                         <Grid.Row>
-                            <Header as='h3'>Τηλέφωνο Επικοινωνίας</Header>
-                            <Header.Subheader>210101010</Header.Subheader>
+                            <Header as='h3'>Τηλέφωνο Επικοινωνίας:</Header>
+                            <Header.Subheader>213-1516649</Header.Subheader>
                             </Grid.Row>
                         <Grid.Row>
                             <Header as='h3'>Ωράριο</Header>
-                            <Header.Subheader>210101010</Header.Subheader>
+                            <Header.Subheader>Τρίτη-Παρασκευή</Header.Subheader>
+                            <Header.Subheader>Όλο το 24ωρο</Header.Subheader>
                         </Grid.Row>
                     </Grid.Column>
                     <Grid.Column floated='right' width={4}>
-                        <Segment floated="right" circular style={square}>
-                            <Header as='h2'>
-                                Κράτηση
-                            </Header>
+                        <Segment circular style={square} className="reservation-button">
+                            <Link to="/reservation">
+                                <Header as='h3'>Κράτηση</Header>
+                            </Link>
                         </Segment>
                     </Grid.Column>
                     </Grid.Row>
