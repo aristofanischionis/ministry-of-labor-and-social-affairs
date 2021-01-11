@@ -44,7 +44,7 @@ export default function Contact() {
                     <Grid.Column floated='right' width={4}>
                         <Segment circular style={square} className="reservation-button">
                             <Link to="/reservation">
-                                <Header as='h3' color="white">Κράτηση</Header>
+                                <Header as='h3' className="white-text">Κράτηση</Header>
                             </Link>
                         </Segment>
                     </Grid.Column>

@@ -39,8 +39,8 @@ const Footer = () => {
                 </Col>
               </Col>              
               <Col size={1}>
-                <Col>
-                  <p><Link to="/FAQ">Συχνές ερωτήσεις</Link></p>
+              <Col>
+                <a href='/FAQ'>Συχνές ερωτήσεις</a>                
                 </Col>
               </Col>
             </Row>   
@@ -53,8 +53,9 @@ const Footer = () => {
                 </Col>
               </Col>              
               <Col size={1}>
-                <Col>
-                  <p><Link to="/europe#info">Ε.Ε.</Link></p>
+              <Col>
+                {/* TODO: DO this  */}
+                  <Link to="/europe#info"><p>Ε.Ε.</p></Link>
                 </Col>
               </Col>
             </Row>
@@ -82,9 +83,6 @@ const Footer = () => {
             </Row>
             <FooterDesc> <u>copyright &copy; 2020 by University of Athens</u> </FooterDesc>
         </FooterSection>
-
-
-
         </Router>
     )
 }

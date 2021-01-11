@@ -1,25 +1,9 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom"
-import PublicRoute from "../../utils/PublicRoute"
-import PrivateRoute from "../../utils/PrivateRoute"
+import {Link} from "react-router-dom"
 import logo from "../../images/logo.png"
 import { Menu, Dropdown, Image, Button} from 'semantic-ui-react'
-import Home from '../Home'
-import Contact from '../Contact'
-import CovidInfo from '../CovidInfoTab'
-import Login from '../auth/Login'
-import Signup from '../auth/Signup'
-import Done from '../auth/Done'
-import NotFoundPage from '../NotFoundPage'
-import SearchBar from '../SearchBar'
-import Reservation from '../Reservation'
-import Dashboard from "../Dashboard";
 import Auth from '../auth'
+import SearchBar from '../SearchBar'
 import './index.css'
 
 const countryOptions = [
@@ -35,7 +19,6 @@ const countryOptions = [
 
 export default function Navigation() {
     return (
-      <Router>
         <div className="sticky-navbar">
           <Menu stackable>
             <Menu.Item>
@@ -73,21 +56,6 @@ export default function Navigation() {
               </Menu.Item>
             </Menu.Menu>
           </Menu>
-        </div>
-
-        {/* A <Switch> looks through its children <Route>s and
-          renders the first one that matches the current URL. */} 
-        <Switch>
-          <PublicRoute path="/login" component={Login} />
-          <PublicRoute path="/signup" component={Signup} />
-          <PrivateRoute path="/dashboard" component={Dashboard} />
-          <Route exact path="/done" component={Done} />
-          <Route exact path="/COVID-info" component={CovidInfo} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/reservation" component={Reservation} />
-          <Route exact path="/" component={Home} />
-          <Route exact path="*" component={NotFoundPage} />
-        </Switch>
-      </Router>
+        </div>        
     )
   }
