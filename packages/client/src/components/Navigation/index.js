@@ -11,7 +11,7 @@ import logo from "../../images/logo.png"
 import { Menu, Dropdown, Image, Button} from 'semantic-ui-react'
 import Home from '../Home'
 import Contact from '../Contact'
-import CovidInfo from '../CovidInfo'
+import CovidInfo from '../CovidInfoTab'
 import Login from '../auth/Login'
 import Signup from '../auth/Signup'
 import Done from '../auth/Done'
