@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import { Link } from "react-router-dom";
-import { Button, Form, Message } from "semantic-ui-react";
-import Layout from "./Layout";
-import history from "../../utils/history"
+import { Button, Form, Message, Header, Grid, Segment } from "semantic-ui-react";
 import { setUserSession } from '../../utils/Common';
-
+import './index.css'
 // https://github.com/Semantic-Org/Semantic-UI-React/blob/master/docs/src/layouts/LoginLayout.js
 // login help
 
@@ -21,10 +19,7 @@ export default function Login() {
     setLoading(true);
     axios.post('http://localhost:3001/api/login', { email: email, password: password }).then(response => {
       setLoading(false);
-      setUserSession(response.data.token, response.data.user);
-      // when the user logs in goes to /Home, 
-      // TODO: Try this again
-      // history.push('/');
+      setUserSession(response.data.token, response.data.user);      
     }).catch(error => {
       setLoading(false);
       if (error.response.status === 401) setError(error.response.data.message);
@@ -33,32 +28,38 @@ export default function Login() {
   }
   // take email and password from form
     return (
-      <Layout header="Είσοδος">
-        <Form loading={loading}>
-        <Form.Input
-          fluid
-          icon="mail"
-          iconPosition="left"
-          placeholder="Διεύθυνση e-mail"
-          className="auth-input-field"
-          onChange={e => setEmail(e.target.value)}
-        />
-        <Form.Input
-          fluid
-          icon="lock"
-          iconPosition="left"
-          placeholder="Password"
-          type="password"
-          className="auth-input-field"
-          onChange={e => setPassword(e.target.value)}
-        />
-        <Button color="teal" fluid size="huge" onClick={handleLogin} disabled={loading}>
-          <Link to="/">Είσοδος</Link>
-        </Button>
-        </Form>
-        <Message size="big">
-          <Link to="/signup">Not Registered?</Link>
-        </Message>
-    </Layout>
+      <Segment style={{ padding: '6em 4em' }} vertical>
+        <Grid centered className="align-text">
+          <Grid.Column width={4}>
+            <Segment raised>
+              {/* <img src={logo} alt="Logo" className="auth-logo" /> */}
+              <Form loading={loading}>
+                <Header as="h2" color="black" textAlign="center">Είσοδος</Header>
+                <Form.Input
+                  fluid
+                  icon="mail"
+                  iconPosition="left"
+                  placeholder="Διεύθυνση e-mail"
+                  onChange={e => setEmail(e.target.value)}
+                />
+                <Form.Input
+                  fluid
+                  icon="lock"
+                  iconPosition="left"
+                  placeholder="Κωδικός"
+                  type="password"
+                  onChange={e => setPassword(e.target.value)}
+                />
+                <Button color="teal" circular onClick={handleLogin} disabled={loading}>
+                  <Link to="/" style={{ color: 'white' }}>Είσοδος</Link>
+                </Button>
+              </Form>
+              <Message>
+                <Link to="/register">Δεν έχετε λογαριασμό;</Link>
+              </Message>
+            </Segment>
+          </Grid.Column>
+        </Grid>
+      </Segment>
     );
 }

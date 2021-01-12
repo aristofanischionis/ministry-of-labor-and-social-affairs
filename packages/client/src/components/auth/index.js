@@ -5,16 +5,17 @@ import Logout from "./Logout"
 import { getUser } from "../../utils/Common"
 
 export default function Auth() {
-    const user = getUser();
+    const user = getUser()
+    console.log(user)
 
     return (
         <div>
             {user ? (
-                <Link to="/login">
-                    <h4>Log In</h4>
-                </Link>
-            ) : (
                 <Logout />
+            ) : (
+                <Link to="/login">
+                    <h4>Είσοδος</h4>
+                </Link>
                 )
             }
         </div>

@@ -14,7 +14,7 @@ import Home from './components/Home'
 import Contact from './components/Contact'
 import CovidInfo from './components/CovidInfoTab'
 import Login from './components/auth/Login'
-import Signup from './components/auth/Signup'
+import Register from './components/auth/Register'
 import Done from './components/auth/Done'
 import NotFoundPage from './components/NotFoundPage'
 import Reservation from './components/Reservation'
@@ -54,9 +54,9 @@ export default function App() {
     {/* A <Switch> looks through its children <Route>s and
           renders the first one that matches the current URL. */} 
         <Switch>
-          {/* <PublicRoute path="/login" component={Login} />
-          <PublicRoute path="/signup" component={Signup} />
-          <PrivateRoute path="/dashboard" component={Dashboard} /> */}
+          <PublicRoute path="/login" component={Login} />
+          <PublicRoute path="/register" component={Register} />
+          <PrivateRoute path="/dashboard" component={Dashboard} />
           <Route exact path="/done" component={Done} />
           <Route exact path="/COVID-info" component={CovidInfo} />
           <Route exact path="/contact" component={Contact} />
