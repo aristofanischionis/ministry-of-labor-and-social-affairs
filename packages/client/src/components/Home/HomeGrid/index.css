@@ -1,0 +1,27 @@
+.padding-columns{
+    padding-inline-end: 500px !important;
+}
+.bring-center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.paint-yellow{
+    background-color:rgb(218, 177, 124) !important;
+    color:rgb(255, 255, 255) !important;
+}
+
+.paint-red{
+    background-color:rgb(238, 134, 131) !important;
+    color:rgb(255, 255, 255) !important;
+}
+
+.paint-green{
+    background-color:rgb(126, 206, 146) !important;
+    color:rgb(255, 255, 255) !important;
+}
+
+.paint-blue{
+    background-color:rgb(78, 124, 161) !important;
+    color:rgb(255, 255, 255) !important;
+}

@@ -34,7 +34,7 @@ const Level4Content = (
   </div>
 )
 const rootPanels = [
-  { key: 'panel-1', title: 'Πως κάνω νέο λογαριασμό;', content: { content: Level1Content } },
+  { key: 'panel-1', title: 'Χρειάζομαι προσωπικό λογαριασμό για να χρησιμοποιήσω τον ιστότοπο;', content: { content: Level1Content } },
   { key: 'panel-2', title: 'Ξέχασα τον κωδικό μου. Πως τον επανακτώ;', content: { content: Level2Content } },
   { key: 'panel-3', title: 'Θα περάσουμε το μάθημα;', content: { content: Level3Content } },
   { key: 'panel-4', title: 'Ποια είναι τα προληπτικά μέτρα που πρέπει να εφαρμόζουν οι επιχειρήσεις υπεραγορών (super market) για τον περιορισμό της διασποράς του κορονοϊού;', content: { content: Level4Content } },

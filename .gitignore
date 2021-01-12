@@ -26,9 +26,18 @@ yarn-error.log*
 
 # cache
 .eslintcache
+.cache
+.bin
 
 .vscode/
 *.log
 dump.rdb
 .env
 *.env
+
+packages/client/node_modules/.bin/react-scripts
+packages/client/node_modules/.bin/tsc
+packages/client/node_modules/.bin/tsserver
+packages/server/node_modules/.bin/cross-env
+packages/server/node_modules/.bin/cross-env-shell
+packages/server/node_modules/.bin/nodemon

@@ -1,0 +1,15 @@
+.style-covid-info {
+    text-align: justify;
+    text-justify: inter-word;
+    padding-left: 1em;
+    padding-right: 2em;
+}
+
+.style-text-initial{
+    text-transform: initial;
+    padding: 3px;
+}
+
+.align{
+    text-align: center;
+}
