@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import axios from 'axios'
 import {
-  BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom"
@@ -32,8 +31,13 @@ export default function App() {
     if (!token) {
       return;
     }
- 
-    axios.get(`http://localhost:3001/verifyToken?token=${token}`).then(response => {
+    console.log("token in front end", token)
+    axios.get('http://localhost:3001/verifyToken', {
+      headers: {
+        'x-access-token': `${token}`
+      }
+    }).then(response => {
+
       setUserSession(response.data.token, response.data.user);
       setAuthLoading(false);
       }).catch(error => {
@@ -43,7 +47,6 @@ export default function App() {
     }, []);
  
   if (authLoading && getToken()) {
-    // TODO: make better
     return <div className="content">Checking Authentication...</div>
   }
 

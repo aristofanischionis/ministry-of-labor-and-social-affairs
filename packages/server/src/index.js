@@ -69,8 +69,28 @@ app.get('/verifyToken', function(req, res) {
     if (!token) return res.status(403).send({ auth: false, message: 'No token provided.' });
     
     jwt.verify(token, secret, function(err, decoded) {
-      if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
-      res.status(200).send(decoded);
+        if (err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token.' });
+        // check and find the user and token
+        const sqlVerify = "SELECT * FROM users WHERE email = ?;"
+        const input = [decoded.id]
+        const db_res = db.query(sqlVerify, input, function (err, result, fields) {
+            if (err) {
+                return res.status(500).send('Error on the server.');
+            }
+            else {
+                const _user = result[0]
+                //If user does not exist this will be undefined and nothing will return. If exists then we will get an answer.
+                if (!_user) {
+                    return res.status(404).send('No user found.');
+                }
+                const returned_user = {
+                    first_name: _user.first_name,
+                    last_name: _user.last_name,
+                    email: _user.email
+                }
+                res.status(200).send({ auth: true, user: returned_user, token: token });
+            }
+        })
     });
 });
 
@@ -92,8 +112,6 @@ app.post("/api/login", async (req, res) => {
                 return res.status(404).send('No user found.');
             }
             // Check hashed password
-            // console.log("password", password)
-            // console.log("_user.password", _user.password)
             const passwordIsValid = bcrypt.compareSync(password, _user.password);
             if (!passwordIsValid) return res.status(401).send({ auth: false, token: null });
     
@@ -106,12 +124,7 @@ app.post("/api/login", async (req, res) => {
                 last_name: _user.last_name,
                 email: _user.email
             }
-
             res.status(200).send({ auth: true, user: returned_user, token: token });
-
-            // res.json({
-            //     user: answer,
-            // });
         }
     })
 })

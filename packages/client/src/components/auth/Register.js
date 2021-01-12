@@ -40,7 +40,7 @@ export default function Register() {
   return (
     <Segment style={{ padding: '3em' }} vertical>
       <Grid centered className="align-text">
-        <Grid.Column width={4}>
+        <Grid.Column width={5}>
           <Segment raised>
           {/* <img src={logo} alt="Logo" className="auth-logo" /> */}
             <Form loading={loading}>
