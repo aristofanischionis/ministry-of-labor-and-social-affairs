@@ -1,13 +1,16 @@
-import React, {useState} from "react";
-import { Link } from "react-router-dom";
-import { Button, Form, Message, Segment, Grid, Header } from "semantic-ui-react";
+import React, {useState} from 'react';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import PropTypes from 'prop-types';
+import {Button, Form, Message, Segment, Grid, Header} from 'semantic-ui-react';
 import axios from 'axios';
-import history from "../../utils/history"
-import { setUserSession } from '../../utils/Common';
-// TODO: Add more fields like First/Last name, in greek
+import {setUserSession} from '../../utils/Common';
+import {setUserInStore} from '../../redux-store/actions';
+import {useHistory} from 'react-router-dom';
+
 // send request to db to verify
 // error message if something is wrong
-export default function Register() {
+const Register = ({setUser}) => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -16,35 +19,48 @@ export default function Register() {
   const [first_name, setFirstName] = useState('');
   const [last_name, setLastName] = useState('');
   const [error, setError] = useState(null);
+  const history = useHistory();
 
   // handle button click of login form
   const handleLogin = () => {
     // check passwoards match
     // TODO: show an ERROR message
     if (password !== confPassword) {
-      setError(true)
+      setError(true);
       return;
     }
     setError(null);
     setLoading(true);
-    axios.post('http://localhost:3001/api/register', { first_name: first_name, last_name: last_name, email: email, password: password }).then(response => {
-      setLoading(false);
-      setUserSession(response.data.token, response.data.user);
-    }).catch(error => {
-      setLoading(false);
-      if (error.response.status === 401) setError(error.response.data.message);
-      else setError("Something went wrong. Please try again later.");
-    });
-  }
+    axios
+      .post('http://localhost:3001/api/register', {
+        first_name: first_name,
+        last_name: last_name,
+        email: email,
+        password: password,
+      })
+      .then(response => {
+        setLoading(false);
+        setUserSession(response.data.token);
+        setUser(response.data.user);
+        history.push('/');
+      })
+      .catch(error => {
+        setLoading(false);
+        if (error.response.status === 401) setError(error.response.data.message);
+        else setError('Something went wrong. Please try again later.');
+      });
+  };
 
   return (
-    <Segment style={{ padding: '3em' }} vertical>
+    <Segment style={{padding: '3em'}} vertical>
       <Grid centered className="align-text">
         <Grid.Column width={5}>
           <Segment raised>
-          {/* <img src={logo} alt="Logo" className="auth-logo" /> */}
+            {/* <img src={logo} alt="Logo" className="auth-logo" /> */}
             <Form loading={loading}>
-              <Header as="h2" color="black" textAlign="center">Εγγραφείτε εδώ</Header>
+              <Header as="h2" color="black" textAlign="center">
+                Εγγραφείτε εδώ
+              </Header>
               <Form.Input
                 fluid
                 icon="user"
@@ -82,8 +98,8 @@ export default function Register() {
                 type="password"
                 onChange={e => setConfPassword(e.target.value)}
               />
-              <Button color="teal" circular onClick={handleLogin} disabled={loading}>
-                <Link to="/" style={{color: 'white'}}>Εγγραφή</Link>
+              <Button color="blue" circular onClick={handleLogin} disabled={loading}>
+                Εγγραφή
               </Button>
             </Form>
             <Message>
@@ -94,4 +110,16 @@ export default function Register() {
       </Grid>
     </Segment>
   );
+};
+
+Register.propTypes = {
+  setUser: PropTypes.func,
+};
+
+export function mapDispatchToProps(dispatch) {
+  return {
+    setUser: user => dispatch(setUserInStore(user)),
+  };
 }
+
+export default connect(null, mapDispatchToProps)(Register);

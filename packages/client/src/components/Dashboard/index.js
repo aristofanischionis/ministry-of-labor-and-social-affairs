@@ -1,9 +1,19 @@
-import React from 'react'
-import { getUser } from '../../utils/Common';
+// import React from 'react';
+import PropTypes from 'prop-types';
+import {connect} from 'react-redux';
+import {getUserFromStore} from '../../redux-store/selector';
 
-export default function Dashboard() {
-    const user = getUser();
-    return <div>
-        I am a secured Dashboard, hello {user.first_name}
-    </div>
-}
+const Dashboard = ({user}) => {
+  return <div>I am a secured Dashboard, hello {user.first_name}</div>;
+};
+
+Dashboard.propTypes = {
+  user: PropTypes.object,
+};
+
+export default connect(
+  state => ({
+    user: getUserFromStore(state),
+  }),
+  null
+)(Dashboard);

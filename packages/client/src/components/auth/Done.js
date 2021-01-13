@@ -1,5 +1,5 @@
-import React from "react";
+import React from 'react';
 
 export default function Done() {
-    return <div>Thanks for signing up!</div>;
+  return <div>Thanks for signing up!</div>;
 }

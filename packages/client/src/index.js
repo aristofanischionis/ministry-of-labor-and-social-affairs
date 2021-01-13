@@ -1,19 +1,25 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { BrowserRouter as Router } from "react-router-dom";
-import './index.css'
-import App from './App'
-import reportWebVitals from './reportWebVitals'
-import 'semantic-ui-css/semantic.min.css'
-import history from './utils/history'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import 'semantic-ui-css/semantic.min.css';
+import history from './utils/history';
+import {Provider} from 'react-redux';
+import {BrowserRouter as Router} from 'react-router-dom';
+import configureStore from './configureStore';
+// Create redux store with history
+const initialState = {};
+const store = configureStore(initialState, history);
+const MOUNT_NODE = document.getElementById('root');
 
 ReactDOM.render(
-  <Router history={history}>
-    <React.StrictMode>
+  <Provider store={store}>
+    <Router history={history}>
       <App />
-    </React.StrictMode>
-  </Router>,
-  document.getElementById('root')
+    </Router>
+  </Provider>,
+  MOUNT_NODE
 );
 
 // If you want to start measuring performance in your app, pass a function
