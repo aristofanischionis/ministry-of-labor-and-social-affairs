@@ -6,10 +6,9 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {setUserInStore} from '../../redux-store/actions';
 import {setUserSession} from '../../utils/Common';
-import {useHistory} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import fail from '../Alerts/fail'
 import './index.css';
-// https://github.com/Semantic-Org/Semantic-UI-React/blob/master/docs/src/layouts/LoginLayout.js
-// login help
 
 const Login = ({setUser}) => {
   const [loading, setLoading] = useState(false);
@@ -17,8 +16,22 @@ const Login = ({setUser}) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const history = useHistory();
+  
+  const isEmailValid = () => {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
   // handle button click of login form
   const handleLogin = () => {
+
+    if (!isEmailValid()) {
+      fail("Το email δεν έχει σωστή μορφή");
+      setError(true)
+      history.push("/login")
+      return;
+    }
+
     setError(null);
     setLoading(true);
     axios
@@ -29,14 +42,14 @@ const Login = ({setUser}) => {
         setUser(response.data.user);
         history.push('/');
       })
-      .catch(error => {
+      .catch(err => {
         setLoading(false);
-        if (error.response.status === 401) setError(error.response.data.message);
-        else setError('Something went wrong. Please try again later.');
+        if (err.response.status === 401) fail(err.response.data.message);
+        else fail('Κάτι πήγε λάθος. Παρακαλώ προσπαθήστε ξανά αργότερα.');
+        setError(true)
       });
   };
 
-  // take email and password from form
   return (
     <Segment style={{padding: '6em 4em'}} vertical>
       <Grid centered className="align-text">

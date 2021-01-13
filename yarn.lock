@@ -13875,15 +13875,15 @@ svgo@^1.0.0, svgo@^1.2.2:
     unquote "~1.1.1"
     util.promisify "~1.0.0"
 
-sweetalert2-react-content@^3.0.1:
+sweetalert2-react-content@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/sweetalert2-react-content/-/sweetalert2-react-content-3.2.2.tgz#56f6bf39b82e5e523f0adda7854549fc737f2116"
   integrity sha512-PC1BG86ZrNOwF9chtBKEH3wc3QIbkOcH4sw2Q45yKkvcFvDwF4JyqSx+usSYODS2IAaq7AmNn77eDNrhCT0Vng==
 
-sweetalert2@^9.11.0:
-  version "9.17.2"
-  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-9.17.2.tgz#7f33ce157a64c303d2ca98863c9a3f437e5f1187"
-  integrity sha512-HkpPZVMYsnhFUBLdy/LvkU9snggKP3VAuSVnPhVXjxdg02lWbFx0W8H3m7A+WMWw2diXZS1wIa4m67XkNxdvew==
+sweetalert2@^10.13.0:
+  version "10.13.0"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-10.13.0.tgz#fd3c25ae511c36608d205aa020214508641ebd45"
+  integrity sha512-kF6Pnr7s7GDqVYRqqgyfxvG5vlUqfP+j+JF7oZ7DOs0/35jg6sTu8hyi6oD6Rb3fIKWIf1S9mCU7wR8iKa7dAA==
 
 symbol-observable@^1.2.0:
   version "1.2.0"

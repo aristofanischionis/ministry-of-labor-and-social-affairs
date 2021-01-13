@@ -7,11 +7,11 @@ async function register()
     const push_data = {
         first_name: "Manos",
         last_name: "Manos_lastname",
-        email: "manos@gmail.com",
+        email: "kostas@theo.gr",
         password: "password"
     }
     const res = await request.post("http://localhost:3001/api/register" , push_data)
-    //console.log(res.body.status)
+    console.log("my respo", res)
     return res
 }
 async function login()

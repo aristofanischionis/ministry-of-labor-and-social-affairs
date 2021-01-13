@@ -7,10 +7,9 @@ import axios from 'axios';
 import {setUserSession} from '../../utils/Common';
 import {setUserInStore} from '../../redux-store/actions';
 import {useHistory} from 'react-router-dom';
+import fail from '../Alerts/fail'
 
-// send request to db to verify
-// error message if something is wrong
-const Register = ({setUser}) => {
+const Register = ({ setUser }) => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,14 +20,51 @@ const Register = ({setUser}) => {
   const [error, setError] = useState(null);
   const history = useHistory();
 
-  // handle button click of login form
-  const handleLogin = () => {
-    // check passwoards match
-    // TODO: show an ERROR message
+  const isEmailValid = () => {
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+
+  const errorChecking = () => {
     if (password !== confPassword) {
       setError(true);
+      fail("Οι δύο κωδικοί δεν ταιριάζουν");
       return;
     }
+  
+    if (password === "") {
+      setError(true);
+      fail("Ο κωδικός δεν μπορεί να είναι κενός");
+      return;
+    }
+  
+    if (first_name === "") {
+      setError(true);
+      fail("Το όνομα δεν μπορεί να είναι κενό");
+      return;
+    }
+  
+    if (last_name === "") {
+      setError(true);
+      fail("Το επίθετο δεν μπορεί να είναι κενό");
+      return;
+    }
+  
+    if (!isEmailValid()) {
+      setError(true)
+      fail("Το email δεν έχει σωστή μορφή");
+      return;
+    }
+
+  }
+  // handle button click of register form
+  const handleLogin = () => {
+    errorChecking();
+    if (error) {
+      history.push("/register")
+      return;
+    }
+
     setError(null);
     setLoading(true);
     axios
@@ -44,10 +80,11 @@ const Register = ({setUser}) => {
         setUser(response.data.user);
         history.push('/');
       })
-      .catch(error => {
+      .catch(err => {
         setLoading(false);
-        if (error.response.status === 401) setError(error.response.data.message);
-        else setError('Something went wrong. Please try again later.');
+        if (err.response.status === 401) setError(err.response.data.message);
+        else setError('Κάτι πήγε λάθος. Παρακαλώ προσπαθήστε ξανά αργότερα.');
+        fail(error);
       });
   };
 

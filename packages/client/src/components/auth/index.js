@@ -7,8 +7,6 @@ import {Link} from 'react-router-dom';
 import Logout from './Logout';
 import {getUserFromStore} from '../../redux-store/selector';
 
-// error message sto login register, gmail na einai swsths morfhs
-
 function Auth({user}) {
   const trigger = (
     <span>
@@ -17,31 +15,33 @@ function Auth({user}) {
     </span>
   );
 
-  const options = [
-    {
-      key: 'user',
-      text: (
-        <span>
-          Συνδεδεμένος ως{' '}
-          <strong>
-            {user.first_name} {user.last_name}
-          </strong>
-        </span>
-      ),
-      disabled: true,
-    },
-    {key: 'profile', text: 'Your Profile'},
-    {key: 'help', text: 'Help'},
-    // { key: 'settings', text: 'Settings' },
-    {key: 'sign-out', text: 'Sign Out'},
-  ];
-
   return (
     <div>
       {user.email !== '' ? (
-        <Dropdown trigger={trigger} options={options} />
+              <Dropdown trigger={trigger}>
+                  <Dropdown.Menu>
+                    <Dropdown.Item disabled>
+                            Συνδεδεμένος ως{' '}
+                            <strong>
+                            {user.first_name} {user.last_name}
+                            </strong>
+                    </Dropdown.Item>
+                      <Dropdown.Item>
+                        <Link to="/dashboard" style={{color: "black"}}>
+                            Το προφίλ μου
+                        </Link>   
+                    </Dropdown.Item>
+                      <Dropdown.Item>
+                        <Link to="/help" style={{color: "black"}}>
+                            Βοήθεια
+                        </Link>   
+                      </Dropdown.Item>
+                      <Dropdown.Item>
+                          <Logout />
+                      </Dropdown.Item>
+                  </Dropdown.Menu>
+        </Dropdown>
       ) : (
-        // <Logout />
         <Link to="/login">
           <h4>Είσοδος</h4>
         </Link>

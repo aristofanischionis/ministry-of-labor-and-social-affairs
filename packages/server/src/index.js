@@ -29,39 +29,48 @@ app.post("/api/register", async (req, res) => {
     const hashedPassword = bcrypt.hashSync(password);
 
     let isValid = true
-    // TODO:first verify that email is unique don't allow multiple users with the same email
-    // because we use it as unique identifier
 
-    const sqlRegister = "INSERT INTO users (first_name, last_name, email, password) VALUES (?,?,?,?);"
-    const input = [first_name, last_name, email, hashedPassword]
-    
-    const db_res = db.query(sqlRegister, input)
-    
-    for (let i = 0; i < input.length; i++) {
-        if(typeof input[i] == 'undefined')
-            isValid = false
-    }
-    console.log("isValid", isValid)
+    const sqlUnique = "SELECT * FROM users WHERE email = ?;";
+    const db_res_unique_email = db.query(sqlUnique, [email], function (err, result) {
+        if (err) {
+            return res.status(500).send('Error with database.');
+        }
+        else {
+            // if result > 0 user exists
+            if (result.length > 0) {
+                return res.status(409).send('This user already exists, try logging in instead.');
+            }
+            const sqlRegister = "INSERT INTO users (first_name, last_name, email, password) VALUES (?,?,?,?);"
+            const input = [first_name, last_name, email, hashedPassword]
+            const db_res = db.query(sqlRegister, input)
 
-    // create a token
-    const token = jwt.sign({ id: email }, secret, {
-        expiresIn: 86400 // expires in 24 hours
-    });
-
-    const _user = {
-        first_name: first_name,
-        last_name: last_name,
-        email: email
-    }
-    
-    if (isValid) {
-        res.json({
-            user: _user,
-            token: token
-        });
-    }
-    else
-        res.status(500).end()
+            for (let i = 0; i < input.length; i++) {
+                if(typeof input[i] == 'undefined')
+                    isValid = false
+            }
+            console.log("isValid", isValid)
+        
+            // create a token
+            const token = jwt.sign({ id: email }, secret, {
+                expiresIn: 86400 // expires in 24 hours
+            });
+        
+            const _user = {
+                first_name: first_name,
+                last_name: last_name,
+                email: email
+            }
+            
+            if (isValid) {
+                res.status(200).json({
+                    user: _user,
+                    token: token
+                });
+            }
+            else
+                res.status(500).end()
+        }
+    })  
 })
 
 app.get('/verifyToken', function(req, res) {
@@ -75,7 +84,7 @@ app.get('/verifyToken', function(req, res) {
         const input = [decoded.id]
         const db_res = db.query(sqlVerify, input, function (err, result, fields) {
             if (err) {
-                return res.status(500).send('Error on the server.');
+                return res.status(500).send('Error with database.');
             }
             else {
                 const _user = result[0]
@@ -103,7 +112,7 @@ app.post("/api/login", async (req, res) => {
     const input = [email]
     const db_res = db.query(sqlLogin, input, function(err, result, fields){
         if(err){
-            return res.status(500).send('Error on the server.');
+            return res.status(500).send('Error with database.');
         }
         else{
             const _user = result[0]
