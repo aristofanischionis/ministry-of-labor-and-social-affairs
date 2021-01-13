@@ -1,3 +1,4 @@
+
 .padding-columns{
     padding-inline-end: 500px !important;
 }
@@ -7,8 +8,11 @@
     margin-right: auto;
 }
 .paint-yellow{
-    background-color:rgb(218, 177, 124) !important;
+    background-color: #377A98 !important;
     color:rgb(255, 255, 255) !important;
+}
+.paint-blue{
+    color:#4EADAF !important;
 }
 
 .paint-red{
@@ -21,7 +25,14 @@
     color:rgb(255, 255, 255) !important;
 }
 
-.paint-blue{
-    background-color:rgb(78, 124, 161) !important;
-    color:rgb(255, 255, 255) !important;
+
+
+.bg-image{
+    background: url(../../../images/minimal-work.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+    
 }

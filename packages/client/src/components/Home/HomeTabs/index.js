@@ -59,5 +59,7 @@ const panes = [
 
 export default function HomeTabs()
 {
-  return(<Tab panes={panes}/>)
+  return(
+    <Tab panes={panes}/>
+  )
 } 

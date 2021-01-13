@@ -9,49 +9,50 @@ import {
 import './index.css'
 
 
+
 export default function GridExampleCelledInternally(){
 
 return(
 <Segment>
-    <Grid centered >
+    <Grid centered className='bg-image'>
         <Grid.Row>
             <Header color='blue'>Γρήγορη πρόσβαση</Header>
         </Grid.Row>
         <Grid.Row columns={2} >
-        <Grid.Column width={2}>
-            <Link>
-                <Segment padded>
-                    <Label className='paint-yellow' size='large' attached='top'>Υγεία και εργασία</Label>
-                    <Icon name='address card' size='huge' color='orange' />
-                </Segment> 
-            </Link>
-        </Grid.Column>
-        
-        <Grid.Column width={2}>
-            <Link to="/COVID-info">
-                <Segment padded>
-                    <Label className='paint-red' size='large' attached='top'>Υγεία και εργασία</Label>
-                    <Icon name='heart' size='huge' color='pink' />
-                </Segment> 
-            </Link>
-        </Grid.Column>
+            <Grid.Column width={3}>
+                <Link>
+                    <Segment padded>
+                        <Label className='paint-yellow' size='large' attached='top'>Δικαιώματα και άδειες εργαζομενων.</Label>
+                        <Icon name='address card' size='huge' className='paint-blue' />
+                    </Segment> 
+                </Link>
+            </Grid.Column>
+            
+            <Grid.Column width={3}>
+                <Link to="/COVID-info">
+                    <Segment padded>
+                        <Label className='paint-yellow' size='large' attached='top'><u>Κορωνοϊός</u>: &nbsp;Κατευθυντήριες οδηγίες.</Label>
+                        <Icon name='heart' size='huge' className='paint-blue' />
+                    </Segment> 
+                </Link>
+            </Grid.Column>
         
         </Grid.Row>
 
         <Grid.Row columns={2}>
-        <Grid.Column width={2}>
+        <Grid.Column width={3}>
             <Link>
                 <Segment padded>
-                    <Label className='paint-green' size='large' attached='top'>Υγεία και εργασία</Label>
-                    <Icon name='home' size='huge' color='green'/>
-                </Segment> 
+                    <Label className='paint-yellow' size='large' attached='top'><u>Τηλεργασία</u> &nbsp;: Οδηγίες για τις δηλώσεις.</Label>
+                    <Icon name='home' size='huge' className='paint-blue'/>
+                </Segment>
             </Link>
         </Grid.Column>
-        <Grid.Column width={2}>
+        <Grid.Column width={3}>
             <Link>
                 <Segment padded>
-                    <Label className='paint-blue' size='large' attached='top'>Υγεία και εργασία</Label>
-                    <Icon name='home' size='huge' color='blue'/>
+                    <Label className='paint-yellow' size='large' attached='top'><u>Επίδομα 800 ευρώ</u>: &nbsp; Bήματα για αίτηση</Label>
+                    <Icon name='home' size='huge' className='paint-blue'/>
                 </Segment> 
             </Link>
         </Grid.Column>
