@@ -6,8 +6,8 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {setUserInStore} from '../../redux-store/actions';
 import {setUserSession} from '../../utils/Common';
-import { useHistory } from 'react-router-dom';
-import fail from '../Alerts/fail'
+import {useHistory} from 'react-router-dom';
+import fail from '../Alerts/fail';
 import './index.css';
 
 const Login = ({setUser}) => {
@@ -16,19 +16,18 @@ const Login = ({setUser}) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const history = useHistory();
-  
+
   const isEmailValid = () => {
     let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
-  }
+  };
 
   // handle button click of login form
   const handleLogin = () => {
-
     if (!isEmailValid()) {
-      fail("Το email δεν έχει σωστή μορφή");
-      setError(true)
-      history.push("/login")
+      fail('Το email δεν έχει σωστή μορφή');
+      setError(true);
+      history.push('/login');
       return;
     }
 
@@ -46,7 +45,7 @@ const Login = ({setUser}) => {
         setLoading(false);
         if (err.response.status === 401) fail(err.response.data.message);
         else fail('Κάτι πήγε λάθος. Παρακαλώ προσπαθήστε ξανά αργότερα.');
-        setError(true)
+        setError(true);
       });
   };
 

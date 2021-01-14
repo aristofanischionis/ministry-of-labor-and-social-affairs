@@ -49,7 +49,7 @@ export default function GridExampleCelledInternally() {
             <Link>
               <Segment padded>
                 <Label className="paint-yellow" size="large" attached="top">
-                  <u>Επίδομα 800 ευρώ</u>: &nbsp; Bήματα για αίτηση
+                  <u>Άδεια ειδικού σκοπού</u>
                 </Label>
                 <Icon name="home" size="huge" className="paint-blue" />
               </Segment>

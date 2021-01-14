@@ -29,8 +29,8 @@ export default function HomeCards() {
         <Grid.Column width={3}>
           <Card
             image={WorkfromHome}
-            header="Elliot Baker"
-            meta="Friend"
+            header="Επίδομα 800€:&nbsp;Bήματα για αίτηση"
+            meta="Εργασιακά"
             description="Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat."
           />
         </Grid.Column>

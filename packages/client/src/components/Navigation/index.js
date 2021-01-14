@@ -27,9 +27,6 @@ export default function Navigation() {
           </Link>
         </Menu.Item>
         <Menu.Menu position="right">
-          {/* <Menu.Item>
-                <Button content='Primary'><Link to="/COVID-info">Πληροφορίες COVID</Link></Button>
-              </Menu.Item> */}
           <Menu.Item>
             <Link to="/ergodotis">Εργοδότης</Link>
           </Menu.Item>

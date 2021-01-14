@@ -7,9 +7,9 @@ import axios from 'axios';
 import {setUserSession} from '../../utils/Common';
 import {setUserInStore} from '../../redux-store/actions';
 import {useHistory} from 'react-router-dom';
-import fail from '../Alerts/fail'
+import fail from '../Alerts/fail';
 
-const Register = ({ setUser }) => {
+const Register = ({setUser}) => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,45 +23,44 @@ const Register = ({ setUser }) => {
   const isEmailValid = () => {
     let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
-  }
+  };
 
   const errorChecking = () => {
     if (password !== confPassword) {
       setError(true);
-      fail("Οι δύο κωδικοί δεν ταιριάζουν");
-      return;
-    }
-  
-    if (password === "") {
-      setError(true);
-      fail("Ο κωδικός δεν μπορεί να είναι κενός");
-      return;
-    }
-  
-    if (first_name === "") {
-      setError(true);
-      fail("Το όνομα δεν μπορεί να είναι κενό");
-      return;
-    }
-  
-    if (last_name === "") {
-      setError(true);
-      fail("Το επίθετο δεν μπορεί να είναι κενό");
-      return;
-    }
-  
-    if (!isEmailValid()) {
-      setError(true)
-      fail("Το email δεν έχει σωστή μορφή");
+      fail('Οι δύο κωδικοί δεν ταιριάζουν');
       return;
     }
 
-  }
+    if (password === '') {
+      setError(true);
+      fail('Ο κωδικός δεν μπορεί να είναι κενός');
+      return;
+    }
+
+    if (first_name === '') {
+      setError(true);
+      fail('Το όνομα δεν μπορεί να είναι κενό');
+      return;
+    }
+
+    if (last_name === '') {
+      setError(true);
+      fail('Το επίθετο δεν μπορεί να είναι κενό');
+      return;
+    }
+
+    if (!isEmailValid()) {
+      setError(true);
+      fail('Το email δεν έχει σωστή μορφή');
+      return;
+    }
+  };
   // handle button click of register form
   const handleLogin = () => {
     errorChecking();
     if (error) {
-      history.push("/register")
+      history.push('/register');
       return;
     }
 

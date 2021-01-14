@@ -18,28 +18,28 @@ function Auth({user}) {
   return (
     <div>
       {user.email !== '' ? (
-              <Dropdown trigger={trigger}>
-                  <Dropdown.Menu>
-                    <Dropdown.Item disabled>
-                            Συνδεδεμένος ως{' '}
-                            <strong>
-                            {user.first_name} {user.last_name}
-                            </strong>
-                    </Dropdown.Item>
-                      <Dropdown.Item>
-                        <Link to="/dashboard" style={{color: "black"}}>
-                            Το προφίλ μου
-                        </Link>   
-                    </Dropdown.Item>
-                      <Dropdown.Item>
-                        <Link to="/help" style={{color: "black"}}>
-                            Βοήθεια
-                        </Link>   
-                      </Dropdown.Item>
-                      <Dropdown.Item>
-                          <Logout />
-                      </Dropdown.Item>
-                  </Dropdown.Menu>
+        <Dropdown trigger={trigger}>
+          <Dropdown.Menu>
+            <Dropdown.Item disabled>
+              Συνδεδεμένος ως{' '}
+              <strong>
+                {user.first_name} {user.last_name}
+              </strong>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Link to="/dashboard" style={{color: 'black'}}>
+                Το προφίλ μου
+              </Link>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Link to="/help" style={{color: 'black'}}>
+                Βοήθεια
+              </Link>
+            </Dropdown.Item>
+            <Dropdown.Item>
+              <Logout />
+            </Dropdown.Item>
+          </Dropdown.Menu>
         </Dropdown>
       ) : (
         <Link to="/login">
