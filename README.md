@@ -9,10 +9,11 @@
 - Idio layout for erazomenos ergodotis ministry (like this https://www.di.uoa.gr/staff)
 - Fill with INFO
 - Register:
-  - it registers when details incorrect (put .function() and promise)
+  - it registers when details incorrect (put .then() and promise)
 - Breadcrumb: (Path)
 - Help page
 - Dashboard (edit profile ergazomenou)
 - Reservation page
 - Ergodotis/Ergazomenos and Company (Front-Back)
 - Footer translate
+- Fix footer to not be sticky

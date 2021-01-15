@@ -23,6 +23,7 @@ import {getToken, setUserSession, removeUserSession} from './utils/Common';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {setUserInStore, removeUserFromStore} from './redux-store/actions';
+import Employee from './components/Employee';
 
 // https://www.cluemediator.com/login-app-create-login-form-in-reactjs-using-secure-rest-api
 
@@ -74,6 +75,7 @@ const App = ({setUser, removeUser}) => {
           <Route exact path="/reservation" component={Reservation} />
           <Route exact path="/tilergasia-odigies" component={RemoteWork} />
           <Route exact path="/epidoma-800-euro" component={ΑllowanceCovid} />
+          <Route exact path="/employee" component={Employee} />
           <Route exact path="/FAQ" component={Faq} />
           <Route exact path="/" component={Home} />
           <Route exact path="*" component={NotFoundPage} />

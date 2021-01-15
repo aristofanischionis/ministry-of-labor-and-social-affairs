@@ -3,7 +3,7 @@ import {Grid, Segment, Label, Header, Icon} from 'semantic-ui-react';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import './index.css';
 
-export default function GridExampleCelledInternally() {
+export default function HomeGrid() {
   return (
     <Segment>
       <Grid centered className="bg-image">
@@ -23,7 +23,7 @@ export default function GridExampleCelledInternally() {
           </Grid.Column>
 
           <Grid.Column width={3}>
-            <Link to="/COVID-info">
+            <Link>
               <Segment padded>
                 <Label className="paint-yellow" size="large" attached="top">
                   <u>Κορωνοϊός</u>: &nbsp;Κατευθυντήριες οδηγίες.

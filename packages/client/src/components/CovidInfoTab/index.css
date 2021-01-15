@@ -9,3 +9,7 @@
     text-transform: initial;
     padding: 3px;
 }
+
+.image-coloring-covinfo{
+    background-color: #e7e7e9 !important;
+}

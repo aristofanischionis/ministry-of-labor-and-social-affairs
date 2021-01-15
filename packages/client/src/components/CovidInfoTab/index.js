@@ -1,7 +1,8 @@
 import React from 'react';
-import {Button, Icon, Tab, Header} from 'semantic-ui-react';
+import {Button, Icon, Tab, Header, Grid, Image} from 'semantic-ui-react';
 import './index.css';
 import superagent from 'superagent';
+import covidinfo from '../../images/covidinfo.jpg'
 
 async function fetchCovidCases() {
   const res = await superagent.get('https://covid-19-greece.herokuapp.com/confirmed');
@@ -42,7 +43,6 @@ const panes = [
     menuItem: 'Γενικές πληροφορίες',
     render: () => (
       <Tab.Pane attached={true}>
-        {/* <Header as='h3' textAlign="center"><u>Γενικές πληροφορίες</u></Header> */}
         <br />
         <p className="style-covid-info">
           <Header as="h4"> Γενικά </Header>
@@ -221,6 +221,16 @@ const panes = [
   },
 ];
 
-const TabExampleTabularFalse = () => <Tab panes={panes} />;
+export default function CovidInfoTab(){
+  return(
+    <Grid>
+      <Grid.Row centered className='image-coloring-covinfo'>
+        <Image src={covidinfo} size='large'/>
+      </Grid.Row>
+      <Grid.Row>
+        <Tab panes={panes} />
+      </Grid.Row>
+    </Grid>
 
-export default TabExampleTabularFalse;
+  )
+}

@@ -28,10 +28,10 @@ export default function Navigation() {
         </Menu.Item>
         <Menu.Menu position="right">
           <Menu.Item>
-            <Link to="/ergodotis">Εργοδότης</Link>
+            <Link to="/employer">Εργοδότης</Link>
           </Menu.Item>
           <Menu.Item>
-            <Link to="/ergazomenos">Εργαζόμενος</Link>
+            <Link to="/employee">Εργαζόμενος</Link>
           </Menu.Item>
           <Menu.Item>
             <Link to="/ministry">Υπουργείο</Link>
