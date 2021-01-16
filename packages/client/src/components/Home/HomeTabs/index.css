@@ -13,3 +13,10 @@
 .align{
     text-align: center;
 }
+.background-coloring-tabs{
+    background-image: linear-gradient(#d5dfe7, #99c1de) !important; 
+}
+
+.move-down{
+    margin-top: 8em;
+}

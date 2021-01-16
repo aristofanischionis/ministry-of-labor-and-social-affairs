@@ -1,19 +1,19 @@
 import React from 'react';
-import {Grid, Segment, Label, Header, Icon} from 'semantic-ui-react';
+import {Grid, Segment, Label, Header, Icon, Container} from 'semantic-ui-react';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
 import './index.css';
 
 export default function HomeGrid() {
   return (
-    <Segment>
-      <Grid centered className="bg-image">
-        <Grid.Row>
-          <Header color="blue">Γρήγορη πρόσβαση</Header>
+    <Container fluid className="bg-image">
+      <Grid centered >
+        <Grid.Row  className='move-down' >
+          <Header>Γρήγορη πρόσβαση</Header>
         </Grid.Row>
         <Grid.Row columns={2}>
           <Grid.Column width={3}>
             <Link>
-              <Segment padded>
+              <Segment raised>
                 <Label className="paint-yellow" size="large" attached="top">
                   Δικαιώματα και άδειες εργαζομενων.
                 </Label>
@@ -24,7 +24,7 @@ export default function HomeGrid() {
 
           <Grid.Column width={3}>
             <Link>
-              <Segment padded>
+              <Segment raised>
                 <Label className="paint-yellow" size="large" attached="top">
                   <u>Κορωνοϊός</u>: &nbsp;Κατευθυντήριες οδηγίες.
                 </Label>
@@ -37,7 +37,7 @@ export default function HomeGrid() {
         <Grid.Row columns={2}>
           <Grid.Column width={3}>
             <Link>
-              <Segment padded>
+              <Segment raised>
                 <Label className="paint-yellow" size="large" attached="top">
                   <u>Τηλεργασία</u> &nbsp;: Οδηγίες για τις δηλώσεις.
                 </Label>
@@ -47,7 +47,7 @@ export default function HomeGrid() {
           </Grid.Column>
           <Grid.Column width={3}>
             <Link>
-              <Segment padded>
+              <Segment raised>
                 <Label className="paint-yellow" size="large" attached="top">
                   <u>Άδεια ειδικού σκοπού</u>
                 </Label>
@@ -57,6 +57,6 @@ export default function HomeGrid() {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-    </Segment>
+    </Container>
   );
 }

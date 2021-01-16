@@ -5,14 +5,12 @@ export const FooterSection = styled.footer`
   padding: 10px 0;
   margin-top: 20px;
   margin-bottom: 0;
-  background-color: #f8f8f8;
-  filter: drop-shadow(0 -4mm 2mm #e9e9e9);
-  position: sticky;
+    
   z-index: 9999;
   bottom: 0;
 `;
 export const FooterOut = styled.div`
-  filter: drop-shadow(0 -6mm 4mm rgb(160, 0, 210));
+  filter: drop-shadow(0 -6mm 4mm black);
 `;
 export const Row = styled.div`
   display: flex;
