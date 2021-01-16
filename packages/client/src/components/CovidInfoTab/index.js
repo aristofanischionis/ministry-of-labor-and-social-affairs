@@ -1,18 +1,17 @@
-import React , {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Button, Icon, Tab, Header, Grid, Image, Segment} from 'semantic-ui-react';
 import './index.css';
 import superagent from 'superagent';
-import covidinfo from '../../images/covidinfo.jpg'
-import deathcovidicon from '../../images/deathcovidicon.png'
-import exitcovidicon from '../../images/exitcovidicon.png'
-import newcaseicon from '../../images/newcaseicon.png'
-import './index.css'
-
+import covidinfo from '../../images/covidinfo.jpg';
+import deathcovidicon from '../../images/deathcovidicon.png';
+import exitcovidicon from '../../images/exitcovidicon.png';
+import newcaseicon from '../../images/newcaseicon.png';
+import './index.css';
 
 // This open proxy is used in order to add 'Access-Control-Allow-Origin' header = *
 // to our request and get covidInfo when Using Firefox
 // https://github.com/Rob--W/cors-anywhere/#documentation
-const openProxy = 'https://cors-anywhere.herokuapp.com/'
+const openProxy = 'https://cors-anywhere.herokuapp.com/';
 
 async function fetchCovidCases() {
   const res = await superagent.get(openProxy + 'https://covid-19-greece.herokuapp.com/confirmed');
@@ -231,7 +230,7 @@ const panes = [
   },
 ];
 
-export default function CovidInfoTab(){
+export default function CovidInfoTab() {
   const [numberOfNewCases, setNumberOfNewCases] = useState(0);
   const [numberOfTotalCases, setNumberOfTotalCases] = useState(0);
   const [numberOfNewDeaths, setNumberOfNewDeaths] = useState(0);
@@ -256,87 +255,83 @@ export default function CovidInfoTab(){
     fetchCovid();
   }, []);
 
-
-  return(
+  return (
     <Grid>
-      <Grid.Row centered className='image-coloring-covinfo'>
-        <Image src={covidinfo} size='medium'/>
+      <Grid.Row centered className="image-coloring-covinfo">
+        <Image src={covidinfo} size="medium" />
       </Grid.Row>
-      <Grid.Row centered className='image-coloring-covinfo2'>
-        <Header as='h3'>Κορωνοϊός: Κατευθυντήριες οδηγίες.</Header>
+      <Grid.Row centered className="image-coloring-covinfo2">
+        <Header as="h3">Κορωνοϊός: Κατευθυντήριες οδηγίες.</Header>
       </Grid.Row>
       <Grid.Row>
-          <Grid centered columns={3}>
-            <Grid.Column width={3}>
-                <Segment raised>
-                  <Grid>
-                    <Grid.Row> 
-                      <Grid.Column width={5}>
-                        <Image src={newcaseicon} size='small'/>
-                      </Grid.Column>
-                      <Grid.Column textAlign='center' width={10}>
-                          <p>
-                            <Header as='h3'>+{numberOfNewCases} </Header>
-                          </p>
-                          <p>
-                            <b>ΣΥΝΟΛΟ: &nbsp; {numberOfTotalCases}</b>
-                          </p>
-                          <p>
-                            ΚΡΟΥΣΜΑΤΑ
-                          </p>
-                      </Grid.Column>
-                    </Grid.Row>
-                  </Grid>
-              </Segment>
-            </Grid.Column>
-            <Grid.Column width={3}>
-                <Segment raised>
-                  <Grid>
-                    <Grid.Row> 
-                      <Grid.Column width={5}>
-                        <Image src={deathcovidicon} size='small'/>
-                      </Grid.Column>
-                      <Grid.Column textAlign='center' width={10}>
-                          <p>
-                            <Header as='h3'>+{numberOfNewDeaths} </Header>
-                          </p>
-                          <p>
-                            <b>ΣΥΝΟΛΟ: &nbsp; {numberOfTotalDeaths}</b>
-                          </p>
-                          <p>
-                            ΑΠΩΛΕΙΕΣ
-                          </p>
-                      </Grid.Column>
-                    </Grid.Row>
-                  </Grid>
-              </Segment>
-            </Grid.Column>
-            <Grid.Column width={3}>
-                <Segment raised>
-                  <Grid>
-                    <Grid.Row> 
-                      <Grid.Column width={5}>
-                        <Image src={exitcovidicon} size='small'/>
-                      </Grid.Column>
-                      <Grid.Column textAlign='center' width={11}>
-                          <p>
-                            <Header as='h3'>+{numberOfNewRecovered} </Header>
-                          </p>
-                          <p>
-                            <b>ΣΥΝΟΛΟ: &nbsp; {numberOfTotalRecovered}</b>
-                          </p>
-                          <p>
-                            ΕΞΗΛΘΑΝ ΑΠΟ ΜΕΘ
-                          </p>
-                      </Grid.Column>
-                    </Grid.Row>
-                  </Grid>
-              </Segment>
-            </Grid.Column>
-          </Grid>
+        <Grid centered columns={3}>
+          <Grid.Column width={3}>
+            <Segment raised>
+              <Grid>
+                <Grid.Row>
+                  <Grid.Column width={5}>
+                    <Image src={newcaseicon} size="small" />
+                  </Grid.Column>
+                  <Grid.Column textAlign="center" width={10}>
+                    <p>
+                      <Header as="h3">+{numberOfNewCases} </Header>
+                    </p>
+                    <p>
+                      <b>ΣΥΝΟΛΟ: &nbsp; {numberOfTotalCases}</b>
+                    </p>
+                    <p>ΚΡΟΥΣΜΑΤΑ</p>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column width={3}>
+            <Segment raised>
+              <Grid>
+                <Grid.Row>
+                  <Grid.Column width={5}>
+                    <Image src={deathcovidicon} size="small" />
+                  </Grid.Column>
+                  <Grid.Column textAlign="center" width={10}>
+                    <p>
+                      <Header as="h3">+{numberOfNewDeaths} </Header>
+                    </p>
+                    <p>
+                      <b>ΣΥΝΟΛΟ: &nbsp; {numberOfTotalDeaths}</b>
+                    </p>
+                    <p>ΑΠΩΛΕΙΕΣ</p>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column width={3}>
+            <Segment raised>
+              <Grid>
+                <Grid.Row>
+                  <Grid.Column width={5}>
+                    <Image src={exitcovidicon} size="small" />
+                  </Grid.Column>
+                  <Grid.Column textAlign="center" width={11}>
+                    <p>
+                      <Header as="h3">+{numberOfNewRecovered} </Header>
+                    </p>
+                    <p>
+                      <b>ΣΥΝΟΛΟ: &nbsp; {numberOfTotalRecovered}</b>
+                    </p>
+                    <p>ΕΞΗΛΘΑΝ ΑΠΟ ΜΕΘ</p>
+                  </Grid.Column>
+                </Grid.Row>
+              </Grid>
+            </Segment>
+          </Grid.Column>
+        </Grid>
       </Grid.Row>
       <Grid.Row centered>
-        <Header as='h6'><Icon name="calendar alternate outline" />{date}</Header>
+        <Header as="h6">
+          <Icon name="calendar alternate outline" />
+          {date}
+        </Header>
       </Grid.Row>
       <Grid.Row centered>
         <Grid.Column width={10}>
@@ -344,6 +339,5 @@ export default function CovidInfoTab(){
         </Grid.Column>
       </Grid.Row>
     </Grid>
-
-  )
+  );
 }

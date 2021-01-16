@@ -58,33 +58,34 @@ const Register = ({setUser}) => {
   };
   // handle button click of register form
   const handleLogin = () => {
-    errorChecking();
-    if (error) {
-      history.push('/register');
-      return;
-    }
-
-    setError(null);
-    setLoading(true);
-    axios
-      .post('http://localhost:3001/api/register', {
-        first_name: first_name,
-        last_name: last_name,
-        email: email,
-        password: password,
-      })
-      .then(response => {
-        setLoading(false);
-        setUserSession(response.data.token);
-        setUser(response.data.user);
-        history.push('/');
-      })
-      .catch(err => {
-        setLoading(false);
-        if (err.response.status === 401) setError(err.response.data.message);
-        else setError('Κάτι πήγε λάθος. Παρακαλώ προσπαθήστε ξανά αργότερα.');
-        fail(error);
-      });
+    errorChecking().then(() => {
+      if (error) {
+        history.push('/register');
+        return;
+      }
+      
+      setError(null);
+      setLoading(true);
+      axios
+        .post('http://localhost:3001/api/register', {
+          first_name: first_name,
+          last_name: last_name,
+          email: email,
+          password: password,
+        })
+        .then(response => {
+          setLoading(false);
+          setUserSession(response.data.token);
+          setUser(response.data.user);
+          history.push('/');
+        })
+        .catch(err => {
+          setLoading(false);
+          if (err.response.status === 401) setError(err.response.data.message);
+          else setError('Κάτι πήγε λάθος. Παρακαλώ προσπαθήστε ξανά αργότερα.');
+          fail(error);
+        });
+    })
   };
 
   return (
