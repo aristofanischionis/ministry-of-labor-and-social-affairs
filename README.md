@@ -6,12 +6,11 @@
 - HomePage:
   - Cards to links sxetika me to thema  
   - Grhgori prosbash (ta tabs kai ta apo katw) 
-- Idio layout for erazomenos ergodotis ministry (like this https://www.di.uoa.gr/staff)
 - Fill with INFO
 - Register:
   - it registers when details incorrect (put .then() and promise)
 - Breadcrumb: (Path)
-- Add covid info statistics
+- Employee & Ministry need valid info, like in Employer
 - Help page
 - Dashboard (edit profile ergazomenou)
 - Reservation page

@@ -3,7 +3,7 @@ import {Button, Grid, Segment, Header, Container, Statistic, Icon} from 'semanti
 import Path from '../Path';
 import './index.css';
 import superagent from 'superagent';
-// here I can put the covid video
+
 const sections = [
   {key: 'Home', content: 'Home', link: true},
   {key: 'COVID-info', content: 'COVID-info', active: true},
@@ -18,7 +18,10 @@ async function fetchCovidCases() {
 
   const daily = today_max_case - before_today_max_case;
   const temp_date = res.body.cases[cases_length].date;
-  const date = temp_date.split("-").reverse().join("-");
+  const date = temp_date
+    .split('-')
+    .reverse()
+    .join('-');
   return [daily, today_max_case, date];
 }
 
