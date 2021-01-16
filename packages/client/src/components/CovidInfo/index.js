@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {Tab, Button, Grid, Segment, Header, Container, Statistic, Icon} from 'semantic-ui-react';
+import {Button, Grid, Segment, Header, Container, Statistic, Icon} from 'semantic-ui-react';
 import Path from '../Path';
 import './index.css';
 import superagent from 'superagent';
-
+// here I can put the covid video
 const sections = [
   {key: 'Home', content: 'Home', link: true},
   {key: 'COVID-info', content: 'COVID-info', active: true},

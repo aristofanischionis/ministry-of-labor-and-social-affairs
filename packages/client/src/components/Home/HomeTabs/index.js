@@ -1,8 +1,7 @@
 import React from 'react';
-import {Button, Icon, Tab, Header, Grid} from 'semantic-ui-react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import {Tab, Header, Grid} from 'semantic-ui-react';
+import {Link} from 'react-router-dom';
 import './index.css';
-import superagent from 'superagent';
 
 const panes = [
   {

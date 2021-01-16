@@ -17,6 +17,8 @@ import Reservation from './components/Reservation';
 import Dashboard from './components/Dashboard';
 import Faq from './components/Faq';
 import Employee from './components/Employee';
+import Employer from './components/Employer';
+import Ministry from './components/Ministry';
 import RemoteWork from './components/Information/RemoteWork';
 import ΑllowanceCovid from './components/Information/ΑllowanceCovid';
 import {getToken, setUserSession, removeUserSession} from './utils/Common';
@@ -34,7 +36,7 @@ const App = ({setUser, removeUser}) => {
     if (!token) {
       return;
     }
-    console.log('token in front end', token);
+
     axios
       .get('http://localhost:3001/verifyToken', {
         headers: {
@@ -74,7 +76,8 @@ const App = ({setUser, removeUser}) => {
           <Route exact path="/reservation" component={Reservation} />
           <Route exact path="/tilergasia-odigies" component={RemoteWork} />
           <Route exact path="/epidoma-800-euro" component={ΑllowanceCovid} />
-          <Route exact path="/employee" component={Employee} />
+          <Route exact path="/employer" component={Employer} />
+          <Route exact path="/ministry" component={Ministry} />
           <Route exact path="/FAQ" component={Faq} />
           <Route exact path="/" component={Home} />
           <Route exact path="*" component={NotFoundPage} />

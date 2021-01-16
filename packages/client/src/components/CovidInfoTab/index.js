@@ -1,16 +1,21 @@
 import React , {useState, useEffect} from 'react';
-import {Button, Icon, Tab, Header, Grid, Image, Segment, Placeholder} from 'semantic-ui-react';
+import {Button, Icon, Tab, Header, Grid, Image, Segment} from 'semantic-ui-react';
 import './index.css';
 import superagent from 'superagent';
 import covidinfo from '../../images/covidinfo.jpg'
 import deathcovidicon from '../../images/deathcovidicon.png'
 import exitcovidicon from '../../images/exitcovidicon.png'
 import newcaseicon from '../../images/newcaseicon.png'
-
 import './index.css'
 
+
+// This open proxy is used in order to add 'Access-Control-Allow-Origin' header = *
+// to our request and get covidInfo when Using Firefox
+// https://github.com/Rob--W/cors-anywhere/#documentation
+const openProxy = 'https://cors-anywhere.herokuapp.com/'
+
 async function fetchCovidCases() {
-  const res = await superagent.get('https://covid-19-greece.herokuapp.com/confirmed');
+  const res = await superagent.get(openProxy + 'https://covid-19-greece.herokuapp.com/confirmed');
   const cases_length = res.body.cases.length - 1;
 
   const today_max_case = res.body.cases[cases_length].confirmed;
@@ -22,7 +27,7 @@ async function fetchCovidCases() {
 }
 
 async function fetchCovidRecovered() {
-  const res = await superagent.get('https://covid-19-greece.herokuapp.com/recovered');
+  const res = await superagent.get(openProxy + 'https://covid-19-greece.herokuapp.com/recovered');
   const cases_length = res.body.cases.length - 1;
 
   const today_max_case = res.body.cases[cases_length].recovered;
@@ -33,7 +38,7 @@ async function fetchCovidRecovered() {
 }
 
 async function fetchCovidDeaths() {
-  const res = await superagent.get('https://covid-19-greece.herokuapp.com/deaths');
+  const res = await superagent.get(openProxy + 'https://covid-19-greece.herokuapp.com/deaths');
   const cases_length = res.body.cases.length - 1;
 
   const today_max_case = res.body.cases[cases_length].deaths;
@@ -313,7 +318,7 @@ export default function CovidInfoTab(){
                       <Grid.Column width={5}>
                         <Image src={exitcovidicon} size='small'/>
                       </Grid.Column>
-                      <Grid.Column textAlign='center' width={10}>
+                      <Grid.Column textAlign='center' width={11}>
                           <p>
                             <Header as='h3'>+{numberOfNewRecovered} </Header>
                           </p>
@@ -331,7 +336,7 @@ export default function CovidInfoTab(){
           </Grid>
       </Grid.Row>
       <Grid.Row centered>
-        <Header as='h6'>{date}</Header>
+        <Header as='h6'><Icon name="calendar alternate outline" />{date}</Header>
       </Grid.Row>
       <Grid.Row centered>
         <Grid.Column width={10}>
