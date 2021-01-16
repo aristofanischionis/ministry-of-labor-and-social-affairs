@@ -11,5 +11,12 @@
 }
 
 .image-coloring-covinfo{
-    background-color: #e7e7e9 !important;
+    background-color: #fcefe6 !important;
+}
+.image-coloring-covinfo2{
+    background-color: #f3d8c5 !important;
+}
+
+.text-spacing{
+    line-height: 0;
 }

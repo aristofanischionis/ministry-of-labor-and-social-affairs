@@ -23,7 +23,6 @@ import {getToken, setUserSession, removeUserSession} from './utils/Common';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {setUserInStore, removeUserFromStore} from './redux-store/actions';
-import Employee from './components/Employee';
 
 // https://www.cluemediator.com/login-app-create-login-form-in-reactjs-using-secure-rest-api
 

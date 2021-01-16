@@ -17,7 +17,8 @@ async function fetchCovidCases() {
   const before_today_max_case = res.body.cases[cases_length - 1].confirmed;
 
   const daily = today_max_case - before_today_max_case;
-  const date = res.body.cases[cases_length].date;
+  const temp_date = res.body.cases[cases_length].date;
+  const date = temp_date.split("-").reverse().join("-");
   return [daily, today_max_case, date];
 }
 
@@ -50,7 +51,7 @@ export default function CovidInfo() {
   const [numberOfTotalDeaths, setNumberOfTotalDeaths] = useState(0);
   const [numberOfNewRecovered, setNumberOfNewRecovered] = useState(0);
   const [numberOfTotalRecovered, setNumberOfTotalRecovered] = useState(0);
-  const [date, setDate] = useState('2020-01-01');
+  const [date, setDate] = useState('01-01-2020');
 
   useEffect(() => {
     async function fetchCovid() {
