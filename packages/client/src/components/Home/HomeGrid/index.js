@@ -6,8 +6,8 @@ import './index.css';
 export default function HomeGrid() {
   return (
     <Container fluid className="bg-image">
-      <Grid centered >
-        <Grid.Row  className='move-down' >
+      <Grid centered>
+        <Grid.Row className="move-down">
           <Header>Γρήγορη πρόσβαση</Header>
         </Grid.Row>
         <Grid.Row columns={2}>

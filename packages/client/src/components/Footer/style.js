@@ -5,7 +5,7 @@ export const FooterSection = styled.footer`
   padding: 10px 0;
   margin-top: 20px;
   margin-bottom: 0;
-    
+
   z-index: 9999;
   bottom: 0;
 `;

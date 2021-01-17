@@ -4,14 +4,14 @@ import covidWork from '../../../images/covid.jpg';
 import WorkfromHome from '../../../images/covidWork.jpg';
 import covidmoney from '../../../images/covidmoney.jpg';
 import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
-import './index.css'
+import './index.css';
 
 export default function HomeCards() {
   return (
-    <Grid centered className='background-coloring'>
-      <Grid.Row/>
+    <Grid centered className="background-coloring">
+      <Grid.Row />
       <Grid.Row centered>
-        <Header as='h3'> Επικαιρότητα </Header>
+        <Header as="h3"> Επικαιρότητα </Header>
       </Grid.Row>
       <Grid.Row>
         <Grid.Column width={3}>

@@ -84,8 +84,8 @@ export default function Employer() {
             )}
             {activeItem === 'Οικονομική καρτέλα εργοδότη' && (
               <div>
-                              {text4()}
-                              <p></p>
+                {text4()}
+                <p></p>
                 <Button circular inverted color="blue">
                   <a
                     href="https://apps.ika.gr/eEmployerTransactions"

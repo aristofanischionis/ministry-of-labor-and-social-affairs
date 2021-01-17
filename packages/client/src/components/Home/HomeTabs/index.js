@@ -1,15 +1,11 @@
-import React , {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {Button, Icon, Tab, Header, Grid, Image, Segment} from 'semantic-ui-react';
 import './index.css';
-
-
 
 // This open proxy is used in order to add 'Access-Control-Allow-Origin' header = *
 // to our request and get covidInfo when Using Firefox
 // https://github.com/Rob--W/cors-anywhere/#documentation
-const openProxy = 'https://cors-anywhere.herokuapp.com/'
-
-
+const openProxy = 'https://cors-anywhere.herokuapp.com/';
 
 const panes = [
   {
@@ -194,10 +190,10 @@ const panes = [
   },
 ];
 
-export default function CovidInfoTab(){
-  return(
-    <Grid className='background-coloring-tabs'>
-      <Grid.Row className='move-down' centered>
+export default function CovidInfoTab() {
+  return (
+    <Grid className="background-coloring-tabs">
+      <Grid.Row className="move-down" centered>
         <Header>Νέα - Ανακοινώσεις</Header>
       </Grid.Row>
       <Grid.Row centered>
@@ -206,6 +202,5 @@ export default function CovidInfoTab(){
         </Grid.Column>
       </Grid.Row>
     </Grid>
-
-  )
+  );
 }

@@ -25,67 +25,64 @@ const Register = ({setUser}) => {
     return re.test(email);
   };
 
-  const errorChecking = () => {
+  // handle button click of register form
+  const handleLogin = () => {
     if (password !== confPassword) {
-      setError(true);
       fail('Οι δύο κωδικοί δεν ταιριάζουν');
+      setError(true);
+      history.push('/register');
       return;
     }
 
     if (password === '') {
-      setError(true);
       fail('Ο κωδικός δεν μπορεί να είναι κενός');
+      setError(true);
+      history.push('/register');
       return;
     }
 
     if (first_name === '') {
-      setError(true);
       fail('Το όνομα δεν μπορεί να είναι κενό');
+      setError(true);
+      history.push('/register');
       return;
     }
 
     if (last_name === '') {
-      setError(true);
       fail('Το επίθετο δεν μπορεί να είναι κενό');
+      setError(true);
+      history.push('/register');
       return;
     }
 
     if (!isEmailValid()) {
-      setError(true);
       fail('Το email δεν έχει σωστή μορφή');
+      setError(true);
+      history.push('/register');
       return;
     }
-  };
-  // handle button click of register form
-  const handleLogin = () => {
-    errorChecking().then(() => {
-      if (error) {
-        history.push('/register');
-        return;
-      }
-      
-      setError(null);
-      setLoading(true);
-      axios
-        .post('http://localhost:3001/api/register', {
-          first_name: first_name,
-          last_name: last_name,
-          email: email,
-          password: password,
-        })
-        .then(response => {
-          setLoading(false);
-          setUserSession(response.data.token);
-          setUser(response.data.user);
-          history.push('/');
-        })
-        .catch(err => {
-          setLoading(false);
-          if (err.response.status === 401) setError(err.response.data.message);
-          else setError('Κάτι πήγε λάθος. Παρακαλώ προσπαθήστε ξανά αργότερα.');
-          fail(error);
-        });
-    })
+
+    setError(null);
+    setLoading(true);
+    axios
+      .post('http://localhost:3001/api/register', {
+        first_name: first_name,
+        last_name: last_name,
+        email: email,
+        password: password,
+      })
+      .then(response => {
+        setLoading(false);
+        setUserSession(response.data.token);
+        setUser(response.data.user);
+        history.push('/');
+      })
+      .catch(err => {
+        setLoading(false);
+        if (err.response.status === 401) setError(err.response.data.message);
+        else setError('Κάτι πήγε λάθος. Παρακαλώ προσπαθήστε ξανά αργότερα.');
+        fail(error);
+      });
   };
 
   return (

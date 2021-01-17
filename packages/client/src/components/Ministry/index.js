@@ -30,11 +30,7 @@ export default function Ministry() {
           </Menu>
         </Grid.Column>
         <Grid.Column stretched width={10}>
-          <Segment>
-            {activeItem === 'κατι για υπουργειο' && (
-              <p>hey</p>
-            )}
-          </Segment>
+          <Segment>{activeItem === 'κατι για υπουργειο' && <p>hey</p>}</Segment>
         </Grid.Column>
       </Grid.Row>
     </Grid>
