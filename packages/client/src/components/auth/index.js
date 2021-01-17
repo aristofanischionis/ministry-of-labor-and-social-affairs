@@ -26,12 +26,12 @@ function Auth({user}) {
                 {user.first_name} {user.last_name}
               </strong>
             </Dropdown.Item>
-              <Link to="/dashboard" style={{color: 'black'}}>
-                <Dropdown.Item>Το προφίλ μου</Dropdown.Item>
-              </Link>
-              <Link to="/help" style={{color: 'black'}}>
-                <Dropdown.Item>Βοήθεια</Dropdown.Item>
-              </Link>
+            <Link to="/dashboard" style={{color: 'black'}}>
+              <Dropdown.Item>Το προφίλ μου</Dropdown.Item>
+            </Link>
+            <Link to="/help" style={{color: 'black'}}>
+              <Dropdown.Item>Βοήθεια</Dropdown.Item>
+            </Link>
             <Dropdown.Item>
               <Logout />
             </Dropdown.Item>
