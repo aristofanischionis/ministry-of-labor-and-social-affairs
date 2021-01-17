@@ -21,8 +21,8 @@ const State = (state: ReducerState = initialState, action: Action): ReducerState
         draft.user.first_name = action.user.first_name;
         draft.user.last_name = action.user.last_name;
         draft.user.email = action.user.email;
-        draft.user.occupation = action.user.occupation;
-        draft.user.company = action.user.company;
+        draft.user.occupation = action.user.occupation ? action.user.occupation : '';
+        draft.user.company = action.user.company ? action.user.company : '';
         break;
       }
       case REMOVE_USER: {

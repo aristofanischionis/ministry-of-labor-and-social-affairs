@@ -54,7 +54,6 @@ const Login = ({setUser}) => {
       <Grid centered className="align-text">
         <Grid.Column width={4}>
           <Segment raised>
-            {/* <img src={logo} alt="Logo" className="auth-logo" /> */}
             <Form loading={loading}>
               <Header as="h2" color="black" textAlign="center">
                 Είσοδος
