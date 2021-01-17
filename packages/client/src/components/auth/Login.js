@@ -43,7 +43,7 @@ const Login = ({setUser}) => {
       })
       .catch(err => {
         setLoading(false);
-        if (err.response.status === 401) fail(err.response.data.message);
+        if (err.response.status === 401) fail('Ο κωδικός ή το email δεν είναι σωστό');
         else fail('Κάτι πήγε λάθος. Παρακαλώ προσπαθήστε ξανά αργότερα.');
         setError(true);
       });
