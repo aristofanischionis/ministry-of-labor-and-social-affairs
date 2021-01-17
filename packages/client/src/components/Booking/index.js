@@ -1,3 +1,3 @@
-import {MainFormContainer} from './MainFormContainer'
+import {Booking} from './Booking';
 
-export default MainFormContainer;
+export default Booking;

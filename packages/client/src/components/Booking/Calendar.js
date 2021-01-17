@@ -1,28 +1,22 @@
-import React, { Component } from "react";
-import { Form } from "semantic-ui-react";
-import {
-  DateInput,
-  TimeInput,
-  DateTimeInput,
-  DatesRangeInput
-} from "semantic-ui-calendar-react";
+import React from 'react';
+import {Form} from 'semantic-ui-react';
+import {DateInput, TimeInput} from 'semantic-ui-calendar-react';
 
 export default class DateTimeForm extends React.Component {
-    
-    constructor(props) {
-        super(props);
-    
-        this.state = {
-          date: "",
-          time: "",
-          dateTime: "",
-          datesRange: ""
-        };
-      }
+  constructor(props) {
+    super(props);
 
-  handleChange = (event, { name, value }) => {
+    this.state = {
+      date: '',
+      time: '',
+      dateTime: '',
+      datesRange: '',
+    };
+  }
+
+  handleChange = (event, {name, value}) => {
     if (this.state.hasOwnProperty(name)) {
-      this.setState({ [name]: value });
+      this.setState({[name]: value});
     }
   };
   render() {
