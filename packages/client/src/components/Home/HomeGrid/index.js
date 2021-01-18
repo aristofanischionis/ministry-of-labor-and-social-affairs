@@ -11,7 +11,7 @@ export default function HomeGrid() {
           <p className='text-size-qa'>Γρήγορη πρόσβαση</p>
         </Grid.Row>
         <Grid.Row columns={2}>
-          <Grid.Column width={3}>
+          <Grid.Column width={4}>
             <Link to='/employee-leave'>
               <Container fluid>
                 <Segment raised>
@@ -21,7 +21,7 @@ export default function HomeGrid() {
             </Link>
           </Grid.Column>
 
-          <Grid.Column width={3}>
+          <Grid.Column width={4}>
             <Link to='/departments'>
               <Container fluid>
                 <Segment raised>
@@ -34,7 +34,7 @@ export default function HomeGrid() {
         </Grid.Row>
 
         <Grid.Row columns={2}>
-          <Grid.Column width={3}>
+          <Grid.Column width={4}>
             <Link>
             <Container fluid>
                 <Segment raised>
@@ -43,7 +43,7 @@ export default function HomeGrid() {
               </Container>
             </Link>
           </Grid.Column>
-          <Grid.Column width={3}>
+          <Grid.Column width={4}>
             <Link>
             <Container fluid>
                 <Segment raised>

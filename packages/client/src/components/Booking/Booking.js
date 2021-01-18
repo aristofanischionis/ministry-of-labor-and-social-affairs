@@ -16,12 +16,14 @@ export class Booking extends React.Component {
       lastName: '',
       email: '',
       speciality: '',
+      date: '',
+      time: ''
     };
   }
 
   handleSubmit = e => {
     e.preventDefault();
-    //just show the success page (step 4 )
+    //just show the success page (step 3 )
     this.setState(prevState => {
       return {
         ...prevState,
@@ -30,7 +32,8 @@ export class Booking extends React.Component {
     });
   };
 
-  handleChange = ({name, value}) => {
+   // Handle fields change
+    handleChange = (name, value) => {
     this.setState(prevState => {
       return {
         ...prevState,
@@ -58,10 +61,10 @@ export class Booking extends React.Component {
   };
 
   render() {
-    const {step} = this.state;
-    const {firstName, lastName, email, speciality} = this.state;
-    const values = {firstName, lastName, email, speciality};
-
+    const { step } = this.state;
+    const {firstName, lastName, email, speciality, date, time} = this.state;
+    const values = {firstName, lastName, email, speciality, date, time};
+    
     return (
       <Container textAlign="left">
         <Form onSubmit={this.handleSubmit}>
