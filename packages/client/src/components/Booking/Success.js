@@ -1,12 +1,19 @@
-import React from 'react';
+// import React from 'react';
+import PropTypes from 'prop-types';
 
-const Success = props => (
-  <div>
-    <h1 className="ui centered">Σας ευχαριστούμε για την κράτηση</h1>
+function Success({ values }) {
+  return (
     <div>
-      <pre>{JSON.stringify(props.values, null, 2)}</pre>
+      <h1 className="ui centered">Σας ευχαριστούμε για την κράτηση!</h1>
+      <div>
+        <pre>{JSON.stringify(values, null, 2)}</pre>
+      </div>
     </div>
-  </div>
-);
+  )
+};
+
+Success.propTypes = {
+  values: PropTypes.object
+};
 
 export {Success};
