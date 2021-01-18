@@ -17,23 +17,32 @@ const panes = [
       <Tab.Pane attached={true}>
         <Grid>
           <Grid.Row>
-            <Grid.Column width={3}>
-              30/07/2020
-            </Grid.Column>
+            <Grid.Column width={3}>30/07/2020</Grid.Column>
             <Grid.Column width={12}>
-            <Header as='h5'>Η ΧΡΗΣΗ ΜΑΣΚΑΣ ΕΙΝΑΙ ΥΠΟΧΡΕΩΤΙΚΗ ΓΙΑ ΤΟ ΚΟΙΝΟ ΠΟΥ ΠΡΟΣΕΡΧΕΤΑΙ ΓΙΑ ΕΞΥΠΗΡΕΤΗΣΗ ΣΕ ΧΩΡΟΥΣ ΓΡΑΦΕΙΩΝ ΔΗΜΟΣΙΩΝ ΥΠΗΡΕΣΙΩΝ</Header>
-            <p>Στο πλαίσιο των έκτακτων μέτρων αντιμετώπισης του κινδύνου διασποράς του κορωνοϊου COVID-19 (Δ1α/ΓΠ.οικ.48002/28-7-2020 Κοινή Υπουργική Απόφαση, Β’ 3131) </p>
-            <a href = {Pdf1} target = "_blank">Download<Icon name='file pdf outline'></Icon></a>
+              <Header as="h5">
+                Η ΧΡΗΣΗ ΜΑΣΚΑΣ ΕΙΝΑΙ ΥΠΟΧΡΕΩΤΙΚΗ ΓΙΑ ΤΟ ΚΟΙΝΟ ΠΟΥ ΠΡΟΣΕΡΧΕΤΑΙ ΓΙΑ ΕΞΥΠΗΡΕΤΗΣΗ ΣΕ
+                ΧΩΡΟΥΣ ΓΡΑΦΕΙΩΝ ΔΗΜΟΣΙΩΝ ΥΠΗΡΕΣΙΩΝ
+              </Header>
+              <p>
+                Στο πλαίσιο των έκτακτων μέτρων αντιμετώπισης του κινδύνου διασποράς του κορωνοϊου
+                COVID-19 (Δ1α/ΓΠ.οικ.48002/28-7-2020 Κοινή Υπουργική Απόφαση, Β’ 3131){' '}
+              </p>
+              <a href={Pdf1} target="_blank">
+                Download<Icon name="file pdf outline"></Icon>
+              </a>
             </Grid.Column>
           </Grid.Row>
           <Grid.Row>
-            <Grid.Column width={3}>
-              21/07/2020
-            </Grid.Column>
+            <Grid.Column width={3}>21/07/2020</Grid.Column>
             <Grid.Column width={12}>
-            <Header as='h5'>ΥΠΟΒΟΛΗ ΔΗΛΩΣΕΩΝ ΤΗΣ Β’ ΦΑΣΗΣ ΓΙΑ ΤΟΝ ΜΗΧΑΝΙΣΜΟ ΣΥΝ-ΕΡΓΑΣΙΑ / ΟΡΘΕΣ ΕΠΑΝΑΛΗΨΕΙΣ (NA_2020-07-21)</Header>
-            <p>για τον μήνα Ιούνιο 2020  </p>
-            <a href = {Pdf2} target = "_blank">Download<Icon name='file pdf outline'></Icon></a>
+              <Header as="h5">
+                ΥΠΟΒΟΛΗ ΔΗΛΩΣΕΩΝ ΤΗΣ Β’ ΦΑΣΗΣ ΓΙΑ ΤΟΝ ΜΗΧΑΝΙΣΜΟ ΣΥΝ-ΕΡΓΑΣΙΑ / ΟΡΘΕΣ ΕΠΑΝΑΛΗΨΕΙΣ
+                (NA_2020-07-21)
+              </Header>
+              <p>για τον μήνα Ιούνιο 2020 </p>
+              <a href={Pdf2} target="_blank">
+                Download<Icon name="file pdf outline"></Icon>
+              </a>
             </Grid.Column>
           </Grid.Row>
         </Grid>
@@ -44,31 +53,33 @@ const panes = [
     menuItem: 'Δελτία Τύπου',
     render: () => (
       <Tab.Pane attached={true}>
-                <Grid>
+        <Grid>
           <Grid.Row>
-            <Grid.Column width={3}>
-              30/07/2020
-            </Grid.Column>
+            <Grid.Column width={3}>30/07/2020</Grid.Column>
             <Grid.Column width={12}>
-            <Header as='h5'>Η ΠΡΟΛΗΨΗ ΤΩΝ ΕΠΑΓΓΕΛΜΑΤΙΚΩΝ ΑΣΘΕΝΕΙΩΝ</Header>
-            <p><b>Στόχος:</b> Η συλλογική προσπάθεια των κυβερνήσεων και των οργανώσεων των εργοδοτών και των εργαζομένων, 
-            η καταπολέμηση αυτής της «κρυφής επιδημίας» θα πρέπει να έχει εξέχουσα θέση στα νέα παγκόσμια και εθνικά
-            προγράμματα για την ασφάλεια και την υγεία στην εργασία.
-            </p>
-            <a href = 'https://osha.europa.eu/el/themes/work-related-diseases' target = "_blank">Περισσότερα</a>
+              <Header as="h5">Η ΠΡΟΛΗΨΗ ΤΩΝ ΕΠΑΓΓΕΛΜΑΤΙΚΩΝ ΑΣΘΕΝΕΙΩΝ</Header>
+              <p>
+                <b>Στόχος:</b> Η συλλογική προσπάθεια των κυβερνήσεων και των οργανώσεων των
+                εργοδοτών και των εργαζομένων, η καταπολέμηση αυτής της «κρυφής επιδημίας» θα πρέπει
+                να έχει εξέχουσα θέση στα νέα παγκόσμια και εθνικά προγράμματα για την ασφάλεια και
+                την υγεία στην εργασία.
+              </p>
+              <a href="https://osha.europa.eu/el/themes/work-related-diseases" target="_blank">
+                Περισσότερα
+              </a>
             </Grid.Column>
           </Grid.Row>
         </Grid>
       </Tab.Pane>
     ),
-  }
+  },
 ];
 
 export default function CovidInfoTab() {
   return (
     <Grid className="background-coloring-tabs">
       <Grid.Row className="move-down-tab" centered>
-        <p className='text-size-tab'>Νέα - Ανακοινώσεις</p>
+        <p className="text-size-tab">Νέα - Ανακοινώσεις</p>
       </Grid.Row>
       <Grid.Row centered className="move-footer-tab">
         <Grid.Column width={10}>

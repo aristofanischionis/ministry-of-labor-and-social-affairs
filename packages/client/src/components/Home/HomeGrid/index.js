@@ -8,25 +8,31 @@ export default function HomeGrid() {
     <Container fluid className="bg-image-grid">
       <Grid centered>
         <Grid.Row className="move-down-grid">
-          <p className='text-size-qa'>Γρήγορη πρόσβαση</p>
+          <p className="text-size-qa">Γρήγορη πρόσβαση</p>
         </Grid.Row>
         <Grid.Row columns={2}>
           <Grid.Column width={4}>
-            <Link to='/employee-leave'>
+            <Link to="/employee-leave">
               <Container fluid>
                 <Segment raised>
-                  <p className='p-text-size-qa'><Icon color='blue' name="address card" size="big"/> &#9; Δικαιώματα και άδειες εργαζομενων</p>
+                  <p className="p-text-size-qa">
+                    <Icon color="blue" name="address card" size="big" /> &#9; Δικαιώματα και άδειες
+                    εργαζομενων
+                  </p>
                 </Segment>
               </Container>
             </Link>
           </Grid.Column>
 
           <Grid.Column width={4}>
-            <Link to='/departments'>
+            <Link to="/departments">
               <Container fluid>
                 <Segment raised>
-                  <p className='p-text-size-qa'> <Icon color='blue' name="building" size="big"/> &#9;Τμήματα - Ιδρύματα - Υπηρεσίες</p>
-                  
+                  <p className="p-text-size-qa">
+                    {' '}
+                    <Icon color="blue" name="building" size="big" /> &#9;Τμήματα - Ιδρύματα -
+                    Υπηρεσίες
+                  </p>
                 </Segment>
               </Container>
             </Link>
@@ -36,18 +42,24 @@ export default function HomeGrid() {
         <Grid.Row columns={2}>
           <Grid.Column width={4}>
             <Link>
-            <Container fluid>
+              <Container fluid>
                 <Segment raised>
-                  <p className='p-text-size-qa'> <Icon color='blue' name="book" size="big"/> &#9; e-βιβλιοθήκη</p>
+                  <p className="p-text-size-qa">
+                    {' '}
+                    <Icon color="blue" name="book" size="big" /> &#9; e-βιβλιοθήκη
+                  </p>
                 </Segment>
               </Container>
             </Link>
           </Grid.Column>
           <Grid.Column width={4}>
             <Link>
-            <Container fluid>
+              <Container fluid>
                 <Segment raised>
-                  <p className='p-text-size-qa'> <Icon color='blue' name="newspaper" size="big"/> &#9; Eκστρατεια ενημέρωσης</p>
+                  <p className="p-text-size-qa">
+                    {' '}
+                    <Icon color="blue" name="newspaper" size="big" /> &#9; Eκστρατεια ενημέρωσης
+                  </p>
                 </Segment>
               </Container>
             </Link>

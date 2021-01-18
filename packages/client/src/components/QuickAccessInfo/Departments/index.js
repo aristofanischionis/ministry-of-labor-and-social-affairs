@@ -45,30 +45,12 @@ export default function Departments() {
         </Grid.Column>
         <Grid.Column stretched width={10}>
           <Segment textAlign={activeItem === 'Τμήμα Εργασιακών Σχέσεων' && 'center'}>
-            {activeItem === 'Υπηρεσίες Κοινωνικών Ασφαλίσεων' && (
-              <div>
-                {text1()}
-              </div>
-            )}
-            {activeItem === 'Υπηρεσίες Κοινωνικής Ευημερίας' && (
-              <div>
-                {text2()}
-              </div>
-            )}
-            {activeItem === 'Τμήμα Εργασίας' && (
-              <div>
-                {text3()}
-              </div>
-            )}
-            {activeItem === 'Τμήμα Εργασιακών Σχέσεων' && (
-              <div>
-                {text4()}
-              </div>
-            )}
+            {activeItem === 'Υπηρεσίες Κοινωνικών Ασφαλίσεων' && <div>{text1()}</div>}
+            {activeItem === 'Υπηρεσίες Κοινωνικής Ευημερίας' && <div>{text2()}</div>}
+            {activeItem === 'Τμήμα Εργασίας' && <div>{text3()}</div>}
+            {activeItem === 'Τμήμα Εργασιακών Σχέσεων' && <div>{text4()}</div>}
             {activeItem === 'Τμήμα Κοινωνικής Ενσωμάτωσης Ατόμων με Αναπηρίες' && (
-              <div>
-                {text5()}
-              </div>
+              <div>{text5()}</div>
             )}
           </Segment>
         </Grid.Column>

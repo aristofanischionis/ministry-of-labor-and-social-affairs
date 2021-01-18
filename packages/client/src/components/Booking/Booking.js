@@ -16,7 +16,7 @@ export class Booking extends React.Component {
       email: '',
       speciality: '',
       date: '',
-      time: ''
+      time: '',
     };
   }
 
@@ -31,8 +31,8 @@ export class Booking extends React.Component {
     });
   };
 
-   // Handle fields change
-    handleChange = (name, value) => {
+  // Handle fields change
+  handleChange = (name, value) => {
     this.setState(prevState => {
       return {
         ...prevState,
@@ -60,10 +60,10 @@ export class Booking extends React.Component {
   };
 
   render() {
-    const { step } = this.state;
+    const {step} = this.state;
     const {firstName, lastName, email, speciality, date, time} = this.state;
     const values = {firstName, lastName, email, speciality, date, time};
-    
+
     return (
       <Container textAlign="left">
         <Form onSubmit={this.handleSubmit}>

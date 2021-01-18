@@ -1,37 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Calendar({ handleChange, values }) {
+function Calendar({handleChange, values}) {
+  return <React.Fragment></React.Fragment>;
+}
 
-  
+Calendar.propTypes = {
+  handleChange: PropTypes.func,
+  values: PropTypes.object,
+};
 
-  return (
-    <React.Fragment>
-        
-      </React.Fragment>
-    );
-  }
+export {Calendar};
 
-  Calendar.propTypes = {
-    handleChange: PropTypes.func,
-    values: PropTypes.object,
-  };
-  
-  export {Calendar};
-  
-  // constructor(props) {
-  //   super(props);
+// constructor(props) {
+//   super(props);
 
-  //   this.state = {
-  //     date: '',
-  //     time: '',
-  //     dateTime: '',
-  //     datesRange: '',
-  //   };
-  // }
+//   this.state = {
+//     date: '',
+//     time: '',
+//     dateTime: '',
+//     datesRange: '',
+//   };
+// }
 
-  // handleChange = (event, {name, value}) => {
-  //   if (this.state.hasOwnProperty(name)) {
-  //     this.setState({[name]: value});
-  //   }
-  // };
+// handleChange = (event, {name, value}) => {
+//   if (this.state.hasOwnProperty(name)) {
+//     this.setState({[name]: value});
+//   }
+// };

@@ -11,7 +11,7 @@ export default function HomeCards() {
     <Grid centered className="background-coloring">
       <Grid.Row />
       <Grid.Row centered>
-        <p className='text-size-cards'> Επικαιρότητα </p>
+        <p className="text-size-cards"> Επικαιρότητα </p>
       </Grid.Row>
       <Grid.Row>
         <Grid.Column width={3}>

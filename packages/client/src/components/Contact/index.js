@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Iframe from 'react-iframe';
 import {Header, Segment, Form, Grid} from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import success from '../Alerts/success';
 import './index.css';
 // TODO: IMPORTANT
@@ -9,21 +9,21 @@ import './index.css';
 // PERFECT LINK TO HELP US WRITE PAGES
 
 export default function Contact() {
-  const square = { width: 135, height: 135 };
-  const [name, setName] = useState('')
-  const [surname, setSurname] = useState('')
-  const [email, setEmail] = useState('')
-  const [text, setText] = useState('')
+  const square = {width: 135, height: 135};
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [email, setEmail] = useState('');
+  const [text, setText] = useState('');
 
   // It doesn't actually send anything anywhere
   // but I have all the info in the above variables so it's super easy to do something with them
   const handleClick = () => {
-    success('Το μήνυμα σας εστάλη με επιτυχία')
-    setName('')
-    setSurname('')
-    setEmail('')
-    setText('')
-  }
+    success('Το μήνυμα σας εστάλη με επιτυχία');
+    setName('');
+    setSurname('');
+    setEmail('');
+    setText('');
+  };
 
   return (
     <div className="contact-page">
@@ -37,11 +37,30 @@ export default function Contact() {
               <Header as="h3">Φόρμα επικοινωνίας</Header>
               <Form>
                 <Form.Group widths="equal">
-                  <Form.Input fluid placeholder="Όνομα" onChange={e => setName(e.target.value)} value={name} />
-                  <Form.Input fluid placeholder="Επίθετο" onChange={e => setSurname(e.target.value)} value={surname} />
+                  <Form.Input
+                    fluid
+                    placeholder="Όνομα"
+                    onChange={e => setName(e.target.value)}
+                    value={name}
+                  />
+                  <Form.Input
+                    fluid
+                    placeholder="Επίθετο"
+                    onChange={e => setSurname(e.target.value)}
+                    value={surname}
+                  />
                 </Form.Group>
-                <Form.Input fluid placeholder="Email" onChange={e => setEmail(e.target.value)} value={email} />
-                <Form.TextArea placeholder="Μήνυμα" onChange={e => setText(e.target.value)} value={text} />
+                <Form.Input
+                  fluid
+                  placeholder="Email"
+                  onChange={e => setEmail(e.target.value)}
+                  value={email}
+                />
+                <Form.TextArea
+                  placeholder="Μήνυμα"
+                  onChange={e => setText(e.target.value)}
+                  value={text}
+                />
                 <Form.Button circular floated="right" color="blue" onClick={handleClick}>
                   Αποστολή
                 </Form.Button>
