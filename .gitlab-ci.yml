@@ -1,0 +1,13 @@
+variables:
+  FRONTEND_NAMESPACE_DEV: client
+  BACKEND_NAMESPACE_DEV: server
+  # OPENSHIFT_SERVER_DEV: ?? Change to our server ??
+  BUILD_ENV_DEV: staging
+  APP_NAME: ministry-of-labor-and-social-affairs
+  DEV_TAG: dev
+
+stages:
+  - build_docker
+  - deploy
+
+# needs more work ...

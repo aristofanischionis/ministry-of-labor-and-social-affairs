@@ -1,0 +1,10 @@
+.style-covid-info {
+    text-align: justify;
+    text-justify: inter-word;
+    line-height: 1.8;
+}
+
+.style-text-initial{
+    text-transform: initial;
+    padding: 3px;
+}

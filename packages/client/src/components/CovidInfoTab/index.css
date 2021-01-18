@@ -1,0 +1,22 @@
+.style-covid-info {
+    text-align: justify;
+    text-justify: inter-word;
+    padding-left: 1em;
+    padding-right: 2em;
+}
+
+.style-text-initial{
+    text-transform: initial;
+    padding: 3px;
+}
+
+.image-coloring-covinfo{
+    background-color: #fcefe6 !important;
+}
+.image-coloring-covinfo2{
+    background-color: #f3d8c5 !important;
+}
+
+.text-spacing{
+    line-height: 0;
+}
