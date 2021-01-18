@@ -7,9 +7,8 @@
   - Grhgori prosbash (ta tabs kai ta apo katw) !important
 - Reservation page !important
 - Fill with INFO !important
-- Register:
-  - it registers when details incorrect (put .then() and promise)
 - Employee & Ministry need valid info, like in Employer
 - Help page
 - Breadcrumb: (Path)
 - Use external file to host all text and import it and render it in pages
+- Covid info tab

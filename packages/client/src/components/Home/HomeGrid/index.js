@@ -11,7 +11,7 @@ export default function HomeGrid() {
           <Header>Γρήγορη πρόσβαση</Header>
         </Grid.Row>
         <Grid.Row columns={2}>
-          <Grid.Column width={3}>
+          <Grid.Column width={4}>
             <Link to='/employee-leave'>
               <Segment raised>
                 <Label size="large" attached="top">
@@ -22,7 +22,7 @@ export default function HomeGrid() {
             </Link>
           </Grid.Column>
 
-          <Grid.Column width={3}>
+          <Grid.Column width={4}>
             <Link to='/departments'>
               <Segment raised>
                 <Label size="large" attached="top">
@@ -35,7 +35,7 @@ export default function HomeGrid() {
         </Grid.Row>
 
         <Grid.Row columns={2}>
-          <Grid.Column width={3}>
+          <Grid.Column width={4}>
             <Link>
               <Segment raised>
                 <Label size="large" attached="top">
@@ -45,7 +45,7 @@ export default function HomeGrid() {
               </Segment>
             </Link>
           </Grid.Column>
-          <Grid.Column width={3}>
+          <Grid.Column width={4}>
             <Link>
               <Segment raised>
                 <Label size="large" attached="top">

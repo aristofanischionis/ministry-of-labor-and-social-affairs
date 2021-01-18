@@ -11,7 +11,7 @@ import './index.css';
 // This open proxy is used in order to add 'Access-Control-Allow-Origin' header = *
 // to our request and get covidInfo when Using Firefox
 // https://github.com/Rob--W/cors-anywhere/#documentation
-const openProxy = 'https://cors-anywhere.herokuapp.com/';
+const openProxy = '';
 
 async function fetchCovidCases() {
   const res = await superagent.get(openProxy + 'https://covid-19-greece.herokuapp.com/confirmed');
@@ -239,21 +239,21 @@ export default function CovidInfoTab() {
   const [numberOfTotalRecovered, setNumberOfTotalRecovered] = useState(0);
   const [date, setDate] = useState('2020-01-01');
 
-  useEffect(() => {
-    async function fetchCovid() {
-      let response = await fetchCovidCases();
-      setNumberOfNewCases(response[0]);
-      setNumberOfTotalCases(response[1]);
-      setDate(response[2]);
-      response = await fetchCovidDeaths();
-      setNumberOfNewDeaths(response[0]);
-      setNumberOfTotalDeaths(response[1]);
-      response = await fetchCovidRecovered();
-      setNumberOfNewRecovered(response[0]);
-      setNumberOfTotalRecovered(response[1]);
-    }
-    fetchCovid();
-  }, []);
+  // useEffect(() => {
+  //   async function fetchCovid() {
+  //     let response = await fetchCovidCases();
+  //     setNumberOfNewCases(response[0]);
+  //     setNumberOfTotalCases(response[1]);
+  //     setDate(response[2]);
+  //     response = await fetchCovidDeaths();
+  //     setNumberOfNewDeaths(response[0]);
+  //     setNumberOfTotalDeaths(response[1]);
+  //     response = await fetchCovidRecovered();
+  //     setNumberOfNewRecovered(response[0]);
+  //     setNumberOfTotalRecovered(response[1]);
+  //   }
+  //   fetchCovid();
+  // }, []);
 
   return (
     <Grid>
