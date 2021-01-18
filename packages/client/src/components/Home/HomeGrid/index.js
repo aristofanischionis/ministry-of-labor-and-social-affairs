@@ -12,12 +12,12 @@ export default function HomeGrid() {
         </Grid.Row>
         <Grid.Row columns={2}>
           <Grid.Column width={3}>
-            <Link>
+            <Link to='/employee-leave'>
               <Segment raised>
-                <Label className="paint-yellow" size="large" attached="top">
-                  Δικαιώματα και άδειες εργαζομενων.
+                <Label size="large" attached="top">
+                  <Header as='h4'>Δικαιώματα και άδειες εργαζομενων</Header>
                 </Label>
-                <Icon name="address card" size="huge" className="paint-blue" />
+                <Icon name="address card outline" size="big"/>
               </Segment>
             </Link>
           </Grid.Column>
@@ -25,10 +25,10 @@ export default function HomeGrid() {
           <Grid.Column width={3}>
             <Link>
               <Segment raised>
-                <Label className="paint-yellow" size="large" attached="top">
-                  <u>Κορωνοϊός</u>: &nbsp;Κατευθυντήριες οδηγίες.
+                <Label size="large" attached="top">
+                 <Header as='h4'>Τμήματα - Ιδρύματα - Υπηρεσίες</Header>
                 </Label>
-                <Icon name="heart" size="huge" className="paint-blue" />
+                <Icon name="building outline" size="big"/>
               </Segment>
             </Link>
           </Grid.Column>
@@ -38,20 +38,20 @@ export default function HomeGrid() {
           <Grid.Column width={3}>
             <Link>
               <Segment raised>
-                <Label className="paint-yellow" size="large" attached="top">
-                  <u>Τηλεργασία</u> &nbsp;: Οδηγίες για τις δηλώσεις.
+                <Label size="large" attached="top">
+                  <Header as='h4'>e-βιβλιοθήκη</Header>
                 </Label>
-                <Icon name="home" size="huge" className="paint-blue" />
+                <Icon name="address book outline" size="big"/>
               </Segment>
             </Link>
           </Grid.Column>
           <Grid.Column width={3}>
             <Link>
               <Segment raised>
-                <Label className="paint-yellow" size="large" attached="top">
-                  <u>Άδεια ειδικού σκοπού</u>
+                <Label size="large" attached="top">
+                  <Header as='h4'>Eκστρατεια ενημέρωσης</Header>
                 </Label>
-                <Icon name="home" size="huge" className="paint-blue" />
+                <Icon name="newspaper outline" size="big"/>
               </Segment>
             </Link>
           </Grid.Column>

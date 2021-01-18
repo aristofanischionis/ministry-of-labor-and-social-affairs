@@ -5,3 +5,8 @@
 .bg-image{
     background-image: linear-gradient(#f5f5f5, #d5dfe7) !important; 
 }
+
+.strip-color
+{
+    background-color: #eaedf4 !important;
+}
