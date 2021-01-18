@@ -21,6 +21,7 @@ import Employer from './components/Employer';
 import Ministry from './components/Ministry';
 import RemoteWork from './components/Information/RemoteWork';
 import ΑllowanceCovid from './components/Information/ΑllowanceCovid';
+import Departments from './components/QuickAccessInfo/Departments';
 import AnnualLeave from './components/QuickAccessInfo/AnnualLeave';
 import {getToken, setUserSession, removeUserSession} from './utils/Common';
 import {connect} from 'react-redux';
@@ -78,6 +79,7 @@ const App = ({setUser, removeUser}) => {
           <Route exact path="/tilergasia-odigies" component={RemoteWork} />
           <Route exact path="/epidoma-800-euro" component={ΑllowanceCovid} />
           <Route exact path="/employee-leave" component={AnnualLeave} />
+          <Route exact path="/departments" component={Departments} />
           <Route exact path="/employer" component={Employer} />
           <Route exact path="/ministry" component={Ministry} />
           <Route exact path="/FAQ" component={Faq} />

@@ -23,7 +23,7 @@ export default function HomeGrid() {
           </Grid.Column>
 
           <Grid.Column width={3}>
-            <Link>
+            <Link to='/departments'>
               <Segment raised>
                 <Label size="large" attached="top">
                  <Header as='h4'>Τμήματα - Ιδρύματα - Υπηρεσίες</Header>
