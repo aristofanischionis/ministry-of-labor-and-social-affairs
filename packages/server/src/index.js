@@ -6,7 +6,7 @@ const mysql  = require('mysql')
 const cors = require('cors')
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-
+const PORT = process.env.PORT || 3001;
 const db = mysql.createPool({
     host: process.env.HOST,
     user: process.env.DB_USER,
@@ -138,6 +138,6 @@ app.post("/api/login", async (req, res) => {
     })
 })
 
-app.listen(3001, () =>{
-    console.log("Api on http://localhost:3001")
+app.listen(PORT, () =>{
+    console.log(`Api on http://localhost:${PORT}`)
 })
