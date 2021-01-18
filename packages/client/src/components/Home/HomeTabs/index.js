@@ -67,10 +67,10 @@ const panes = [
 export default function CovidInfoTab() {
   return (
     <Grid className="background-coloring-tabs">
-      <Grid.Row className="move-down" centered>
-        <Header>Νέα - Ανακοινώσεις</Header>
+      <Grid.Row className="move-down-tab" centered>
+        <p className='text-size-tab'>Νέα - Ανακοινώσεις</p>
       </Grid.Row>
-      <Grid.Row centered>
+      <Grid.Row centered className="move-footer-tab">
         <Grid.Column width={10}>
           <Tab panes={panes} />
         </Grid.Column>

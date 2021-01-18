@@ -14,9 +14,14 @@
     text-align: center;
 }
 .background-coloring-tabs{
-    background-image: linear-gradient(#d5dfe7, #99c1de) !important; 
+    background-image: linear-gradient(#ebedee, #fdfbfb) !important; 
 }
-
-.move-down{
-    margin-top: 8em;
+.text-size-tab{
+    font-size: large;
+}
+.move-down-tab{
+    margin-top: 7em;
+}
+.move-footer-tab{
+    margin-bottom: 7em;
 }

@@ -1,7 +1,14 @@
-.move-down{
-    margin-top: 8em;
-}
+.move-down-grid{
+    margin-top: 6em;
 
-.bg-image{
-    background-image: linear-gradient(#f5f5f5, #d5dfe7) !important; 
+}
+.text-size-qa{
+    font-size: large;
+}
+.p-text-size-qa{
+    font-size: small;
+    color: black;
+}
+.bg-image-grid{
+    background-image: linear-gradient(#fdfbfb, #ebedee) !important; 
 }

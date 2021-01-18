@@ -5,31 +5,30 @@ import './index.css';
 
 export default function HomeGrid() {
   return (
-    <Container fluid className="bg-image">
+    <Container fluid className="bg-image-grid">
       <Grid centered>
-        <Grid.Row className="move-down">
-          <Header>Γρήγορη πρόσβαση</Header>
+        <Grid.Row className="move-down-grid">
+          <p className='text-size-qa'>Γρήγορη πρόσβαση</p>
         </Grid.Row>
         <Grid.Row columns={2}>
           <Grid.Column width={3}>
             <Link to='/employee-leave'>
-              <Segment raised>
-                <Label size="large" attached="top">
-                  <Header as='h4'>Δικαιώματα και άδειες εργαζομενων</Header>
-                </Label>
-                <Icon name="address card outline" size="big"/>
-              </Segment>
+              <Container fluid>
+                <Segment raised>
+                  <p className='p-text-size-qa'><Icon color='blue' name="address card" size="big"/> &#9; Δικαιώματα και άδειες εργαζομενων</p>
+                </Segment>
+              </Container>
             </Link>
           </Grid.Column>
 
           <Grid.Column width={3}>
             <Link to='/departments'>
-              <Segment raised>
-                <Label size="large" attached="top">
-                 <Header as='h4'>Τμήματα - Ιδρύματα - Υπηρεσίες</Header>
-                </Label>
-                <Icon name="building outline" size="big"/>
-              </Segment>
+              <Container fluid>
+                <Segment raised>
+                  <p className='p-text-size-qa'> <Icon color='blue' name="building" size="big"/> &#9;Τμήματα - Ιδρύματα - Υπηρεσίες</p>
+                  
+                </Segment>
+              </Container>
             </Link>
           </Grid.Column>
         </Grid.Row>
@@ -37,22 +36,20 @@ export default function HomeGrid() {
         <Grid.Row columns={2}>
           <Grid.Column width={3}>
             <Link>
-              <Segment raised>
-                <Label size="large" attached="top">
-                  <Header as='h4'>e-βιβλιοθήκη</Header>
-                </Label>
-                <Icon name="address book outline" size="big"/>
-              </Segment>
+            <Container fluid>
+                <Segment raised>
+                  <p className='p-text-size-qa'> <Icon color='blue' name="book" size="big"/> &#9; e-βιβλιοθήκη</p>
+                </Segment>
+              </Container>
             </Link>
           </Grid.Column>
           <Grid.Column width={3}>
             <Link>
-              <Segment raised>
-                <Label size="large" attached="top">
-                  <Header as='h4'>Eκστρατεια ενημέρωσης</Header>
-                </Label>
-                <Icon name="newspaper outline" size="big"/>
-              </Segment>
+            <Container fluid>
+                <Segment raised>
+                  <p className='p-text-size-qa'> <Icon color='blue' name="newspaper" size="big"/> &#9; Eκστρατεια ενημέρωσης</p>
+                </Segment>
+              </Container>
             </Link>
           </Grid.Column>
         </Grid.Row>

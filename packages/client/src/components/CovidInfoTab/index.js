@@ -11,7 +11,7 @@ import './index.css';
 // This open proxy is used in order to add 'Access-Control-Allow-Origin' header = *
 // to our request and get covidInfo when Using Firefox
 // https://github.com/Rob--W/cors-anywhere/#documentation
-const openProxy = 'https://cors-anywhere.herokuapp.com/';
+const openProxy = '';
 
 async function fetchCovidCases() {
   const res = await superagent.get(openProxy + 'https://covid-19-greece.herokuapp.com/confirmed');

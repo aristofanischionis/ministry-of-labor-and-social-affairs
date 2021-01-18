@@ -30,7 +30,7 @@ const Footer = () => {
         </Row>
         <Row>
           <Col size={1}>+30 213 1516649</Col>
-          <Col size={1}>Tuesday - Friday round-the-clock</Col>
+          <Col size={1}>Τρίτη - Παρασκευή</Col>
           <Col size={1}>
             <Col>
               <a href="https://www.efka.gov.gr/el" target="_blank" rel="noopener noreferrer">
@@ -46,7 +46,7 @@ const Footer = () => {
         </Row>
         <Row>
           <Col size={1}></Col>
-          <Col size={1}></Col>
+          <Col size={1}>Όλο το 24ωρο</Col>
           <Col size={1}>
             <Col>
               <a href="https://www.ika.gr/" target="_blank" rel="noopener noreferrer">

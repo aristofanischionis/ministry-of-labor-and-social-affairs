@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import logo from '../../images/logo.png';
+import logo from '../../images/logo2.png';
 import {Menu, Dropdown, Image} from 'semantic-ui-react';
 import Auth from '../auth';
 import SearchBar from '../SearchBar';
