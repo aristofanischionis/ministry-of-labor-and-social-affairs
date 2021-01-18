@@ -6,12 +6,13 @@ import {DateInput, TimeInput} from 'semantic-ui-calendar-react';
 function PersonalDetails({ values, handleChange, next, prev }) {
   const { firstName, lastName, email, speciality, date, time } = values;
   const handleClickDate = (e) => {
+    console.log("mpainw date!")
     handleChange('date', e.target.value)
   } 
   const handleClickTime = (e) => {
     handleChange('time', e.target.value)
   } 
-  
+  console.log("dateeeeeeeeeeee", date)
   return (
     <React.Fragment>
       <h1 className="ui centered">Επιλογή ημερομηνίας</h1>
@@ -31,7 +32,7 @@ function PersonalDetails({ values, handleChange, next, prev }) {
           />
       <br />
       <Button onClick={prev}>Back</Button>
-      <Button color="blue" type="submit">
+      <Button color="blue" type="submit" onClick={next}>
         Submit
       </Button>
     </React.Fragment>

@@ -5,7 +5,6 @@ import {PersonalDetails} from './PersonalDetails';
 import {Success} from './Success';
 import {Form} from 'semantic-ui-react';
 
-// TODO: Needs work
 export class Booking extends React.Component {
   constructor(props) {
     super(props);
