@@ -27,8 +27,8 @@ import {getToken, setUserSession, removeUserSession} from './utils/Common';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import {setUserInStore, removeUserFromStore} from './redux-store/actions';
-
-// https://www.cluemediator.com/login-app-create-login-form-in-reactjs-using-secure-rest-api
+import config from './config';
+const request_url = config.backend;
 
 const App = ({setUser, removeUser}) => {
   const [authLoading, setAuthLoading] = useState(true);
@@ -40,7 +40,7 @@ const App = ({setUser, removeUser}) => {
     }
 
     axios
-      .get('http://localhost:3001/verifyToken', {
+      .get(request_url + '/verifyToken', {
         headers: {
           'x-access-token': `${token}`,
         },

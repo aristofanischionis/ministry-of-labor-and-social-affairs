@@ -86,7 +86,7 @@ const Step = ({step, values, handleChange, next, prev}) => {
       return <UserDetails values={values} handleChange={handleChange} next={next} />;
     case 2:
       return (
-        <PersonalDetails values={values} handleChange={handleChange} next={next} prev={prev} />
+        <PersonalDetails handleChange={handleChange} next={next} prev={prev} />
       );
     case 3:
       return <Success values={values} />;

@@ -9,6 +9,8 @@ import {setUserSession} from '../../utils/Common';
 import {useHistory} from 'react-router-dom';
 import fail from '../Alerts/fail';
 import './index.css';
+import config from '../../config';
+const request_url = config.backend;
 
 const Login = ({setUser}) => {
   const [loading, setLoading] = useState(false);
@@ -34,7 +36,7 @@ const Login = ({setUser}) => {
     setError(null);
     setLoading(true);
     axios
-      .post('http://localhost:3001/api/login', {email: email, password: password})
+      .post(request_url + '/api/login', {email: email, password: password})
       .then(response => {
         setLoading(false);
         setUserSession(response.data.token);

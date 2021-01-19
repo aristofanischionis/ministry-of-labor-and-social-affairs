@@ -8,6 +8,8 @@ import {setUserSession} from '../../utils/Common';
 import {setUserInStore} from '../../redux-store/actions';
 import {useHistory} from 'react-router-dom';
 import fail from '../Alerts/fail';
+import config from '../../config';
+const request_url = config.backend;
 
 const Register = ({setUser}) => {
   const [loading, setLoading] = useState(false);
@@ -65,7 +67,7 @@ const Register = ({setUser}) => {
     setError(null);
     setLoading(true);
     axios
-      .post('http://localhost:3001/api/register', {
+      .post(request_url + '/api/register', {
         first_name: first_name,
         last_name: last_name,
         email: email,

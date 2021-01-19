@@ -7,7 +7,7 @@ async function register()
     const push_data = {
         first_name: "Manos",
         last_name: "Manos_lastname",
-        email: "kostas1@theo.gr",
+        email: "kostas2@theo.gr",
         password: "password"
     }
     const res = await request.post("https://eam-backend.herokuapp.com/api/register" , push_data)
@@ -33,5 +33,5 @@ async function login()
     console.log("User exists: "+isValid)
     return isValid
 }
-// register()
-login()
+register()
+// login()
