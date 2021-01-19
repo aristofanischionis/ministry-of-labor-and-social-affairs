@@ -51,11 +51,12 @@ export default function HomeGrid() {
             </Link>
           </Grid.Column>
           <Grid.Column width={4}>
-            <a href='https://vontikakis.com/el/ypologismos-misthou' target="_blank">
+            <a href="https://vontikakis.com/el/ypologismos-misthou" target="_blank">
               <Container fluid>
                 <Segment raised>
                   <p className="p-text-size-qa">
-                    <Icon color='blue' name="calculator" size="big" /> &#9; Υπολογισμός καθαρού μισθού
+                    <Icon color="blue" name="calculator" size="big" /> &#9; Υπολογισμός καθαρού
+                    μισθού
                   </p>
                 </Segment>
               </Container>

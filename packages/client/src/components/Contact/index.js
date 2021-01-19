@@ -4,8 +4,7 @@ import {Header, Segment, Form, Grid} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 import success from '../Alerts/success';
 import './index.css';
-import { getToken } from '../../utils/Common';
-
+import {getToken} from '../../utils/Common';
 
 export default function Contact() {
   const square = {width: 135, height: 135};
@@ -23,7 +22,7 @@ export default function Contact() {
     setEmail('');
     setText('');
   };
-  const token = getToken()
+  const token = getToken();
 
   return (
     <div className="contact-page">
@@ -80,12 +79,12 @@ export default function Contact() {
             <Grid.Column floated="right" width={4}>
               {token && (
                 <Segment circular style={square} className="reservation-button">
-                <Link to="/reservation">
-                  <Header as="h3" className="white-text">
-                    Κράτηση
-                  </Header>
-                </Link>
-              </Segment>
+                  <Link to="/reservation">
+                    <Header as="h3" className="white-text">
+                      Κράτηση
+                    </Header>
+                  </Link>
+                </Segment>
               )}
             </Grid.Column>
           </Grid.Row>

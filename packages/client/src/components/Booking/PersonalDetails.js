@@ -4,19 +4,18 @@ import {Button} from 'semantic-ui-react';
 import {DateInput, TimeInput} from 'semantic-ui-calendar-react';
 
 function PersonalDetails({handleChange, next, prev}) {
-  const [cur_date, setCurDate] = useState('')
-  const [cur_time, setCurTime] = useState('')
+  const [cur_date, setCurDate] = useState('');
+  const [cur_time, setCurTime] = useState('');
 
   const handleClick = (event, {name, value}) => {
     if (name === 'date') {
-      setCurDate(value)
+      setCurDate(value);
       handleChange('date', value);
-    }
-    else {
-      setCurTime(value)
+    } else {
+      setCurTime(value);
       handleChange('time', value);
     }
-  }
+  };
 
   return (
     <React.Fragment>

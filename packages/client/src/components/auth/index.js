@@ -39,7 +39,7 @@ function Auth({user}) {
         </Dropdown>
       ) : (
         <Link to="/login">
-          <h4 style={{'color':'#4d5bc9'}} >Είσοδος</h4>
+          <h4 style={{color: '#4d5bc9'}}>Είσοδος</h4>
         </Link>
       )}
     </div>

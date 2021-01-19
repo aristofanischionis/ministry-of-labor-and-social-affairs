@@ -40,8 +40,6 @@ export default function SearchBar() {
 
       const re = new RegExp(_.escapeRegExp(data.value), 'i');
       const isMatch = result => re.test(result.title);
-
-
     }, 300);
   }, []);
   React.useEffect(() => {
@@ -51,11 +49,10 @@ export default function SearchBar() {
   }, []);
 
   return (
-   
     <Search
       loading={loading}
-      label='Αναζήτηση'
-      placeholder='Αναζήτηση'
+      label="Αναζήτηση"
+      placeholder="Αναζήτηση"
       onResultSelect={(e, data) =>
         dispatch({type: 'UPDATE_SELECTION', selection: data.result.title})
       }

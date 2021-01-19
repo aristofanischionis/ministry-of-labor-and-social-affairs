@@ -17,21 +17,29 @@ export default function Navigation() {
       <Menu stackable>
         <Menu.Item>
           <Link to="/">
-            <Image alt='εικονίδιο υπουργείου εργασίας' src={logo} size="medium" />
+            <Image alt="εικονίδιο υπουργείου εργασίας" src={logo} size="medium" />
           </Link>
         </Menu.Item>
         <Menu.Menu position="right">
           <Menu.Item>
-            <Link style={{'color':'black'}} to="/employer">Εργοδότης</Link>
+            <Link style={{color: 'black'}} to="/employer">
+              Εργοδότης
+            </Link>
           </Menu.Item>
           <Menu.Item>
-            <Link style={{'color':'black'}} to="/employee">Εργαζόμενος</Link>
+            <Link style={{color: 'black'}} to="/employee">
+              Εργαζόμενος
+            </Link>
           </Menu.Item>
           <Menu.Item>
-            <Link style={{'color':'black'}} to="/ministry">Υπουργείο</Link>
+            <Link style={{color: 'black'}} to="/ministry">
+              Υπουργείο
+            </Link>
           </Menu.Item>
           <Menu.Item>
-            <Link style={{'color':'black'}} to="/contact">Επικοινωνία</Link>
+            <Link style={{color: 'black'}} to="/contact">
+              Επικοινωνία
+            </Link>
           </Menu.Item>
           <Menu.Item>
             <Dropdown options={countryOptions} defaultValue={countryOptions[0].value} />

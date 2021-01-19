@@ -27,7 +27,7 @@ const panes = [
                 Στο πλαίσιο των έκτακτων μέτρων αντιμετώπισης του κινδύνου διασποράς του κορωνοϊου
                 COVID-19 (Δ1α/ΓΠ.οικ.48002/28-7-2020 Κοινή Υπουργική Απόφαση, Β’ 3131){' '}
               </p>
-              <a style={{'color':'#4d5bc9'}} href={Pdf1} target="_blank">
+              <a style={{color: '#4d5bc9'}} href={Pdf1} target="_blank">
                 Download<Icon name="file pdf outline"></Icon>
               </a>
             </Grid.Column>
@@ -40,7 +40,7 @@ const panes = [
                 (NA_2020-07-21)
               </Header>
               <p>για τον μήνα Ιούνιο 2020 </p>
-              <a style={{'color':'#4d5bc9'}} href={Pdf2} target="_blank">
+              <a style={{color: '#4d5bc9'}} href={Pdf2} target="_blank">
                 Download<Icon name="file pdf outline"></Icon>
               </a>
             </Grid.Column>
