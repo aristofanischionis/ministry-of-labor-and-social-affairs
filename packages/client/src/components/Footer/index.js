@@ -33,14 +33,14 @@ const Footer = () => {
           <Col size={1}>Τρίτη - Παρασκευή</Col>
           <Col size={1}>
             <Col>
-              <a href="https://www.efka.gov.gr/el" target="_blank" rel="noopener noreferrer">
+              <a style={{'color':'#4d5bc9'}} href="https://www.efka.gov.gr/el" target="_blank" rel="noopener noreferrer">
                 ΕΦΚΑ
               </a>
             </Col>
           </Col>
           <Col size={1}>
             <Col>
-              <a href="/FAQ">Συχνές ερωτήσεις</a>
+              <a  style={{'color':'#4d5bc9'}} href="/FAQ">Συχνές ερωτήσεις</a>
             </Col>
           </Col>
         </Row>
@@ -49,7 +49,7 @@ const Footer = () => {
           <Col size={1}>Όλο το 24ωρο</Col>
           <Col size={1}>
             <Col>
-              <a href="https://www.ika.gr/" target="_blank" rel="noopener noreferrer">
+              <a style={{'color':'#4d5bc9'}} href="https://www.ika.gr/" target="_blank" rel="noopener noreferrer">
                 ΙΚΑ
               </a>
             </Col>
@@ -58,7 +58,7 @@ const Footer = () => {
             <Col>
               {/* TODO: DO this  */}
               <Link to="/europe#info">
-                <p>Ε.Ε.</p>
+                <p style={{'color':'#4d5bc9'}} >Ε.Ε.</p>
               </Link>
             </Col>
           </Col>
@@ -68,7 +68,7 @@ const Footer = () => {
           <Col size={1}></Col>
           <Col size={1}>
             <Col>
-              <a href="https://www.oga.gr/index.php" target="_blank" rel="noopener noreferrer">
+              <a style={{'color':'#4d5bc9'}} href="https://www.oga.gr/index.php" target="_blank" rel="noopener noreferrer">
                 ΟΓΑ
               </a>
             </Col>
@@ -80,7 +80,7 @@ const Footer = () => {
           <Col size={1}></Col>
           <Col size={1}>
             <Col>
-              <a href="https://www.oaee.gr/" target="_blank" rel="noopener noreferrer">
+              <a style={{'color':'#4d5bc9'}} href="https://www.oaee.gr/" target="_blank" rel="noopener noreferrer">
                 ΟΑΕΕ
               </a>
             </Col>
@@ -89,7 +89,7 @@ const Footer = () => {
         </Row>
         <FooterDesc>
           {' '}
-          <u>copyright &copy; 2020 by University of Athens</u>{' '}
+          <u style={{'color':'black'}}>copyright &copy; 2020 by University of Athens</u>
         </FooterDesc>
       </FooterSection>
     </Router>

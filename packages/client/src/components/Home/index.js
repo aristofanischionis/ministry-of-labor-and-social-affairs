@@ -2,7 +2,7 @@ import React from 'react';
 import HomeTabs from './HomeTabs';
 import HomeGrid from './HomeGrid';
 import HomeCards from './HomeCards';
-import {Grid, Header} from 'semantic-ui-react';
+import {Grid} from 'semantic-ui-react';
 import './index.css';
 
 // https://react.semantic-ui.com/layouts/homepage/

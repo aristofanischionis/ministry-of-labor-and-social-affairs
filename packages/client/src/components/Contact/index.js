@@ -4,9 +4,8 @@ import {Header, Segment, Form, Grid} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
 import success from '../Alerts/success';
 import './index.css';
-// TODO: IMPORTANT
-// https://github.com/Semantic-Org/Semantic-UI-React/blob/master/docs/src/layouts/HomepageLayout.js
-// PERFECT LINK TO HELP US WRITE PAGES
+import { getToken } from '../../utils/Common';
+
 
 export default function Contact() {
   const square = {width: 135, height: 135};
@@ -24,6 +23,7 @@ export default function Contact() {
     setEmail('');
     setText('');
   };
+  const token = getToken()
 
   return (
     <div className="contact-page">
@@ -78,13 +78,15 @@ export default function Contact() {
               </Grid.Row>
             </Grid.Column>
             <Grid.Column floated="right" width={4}>
-              <Segment circular style={square} className="reservation-button">
+              {token && (
+                <Segment circular style={square} className="reservation-button">
                 <Link to="/reservation">
                   <Header as="h3" className="white-text">
                     Κράτηση
                   </Header>
                 </Link>
               </Segment>
+              )}
             </Grid.Column>
           </Grid.Row>
         </Grid>
