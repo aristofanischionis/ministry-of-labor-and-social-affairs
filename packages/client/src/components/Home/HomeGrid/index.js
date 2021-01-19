@@ -1,6 +1,6 @@
 import React from 'react';
 import {Grid, Segment, Label, Header, Icon, Container} from 'semantic-ui-react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 import './index.css';
 
 export default function HomeGrid() {
@@ -29,7 +29,6 @@ export default function HomeGrid() {
               <Container fluid>
                 <Segment raised>
                   <p className="p-text-size-qa">
-                    {' '}
                     <Icon color="blue" name="building" size="big" /> &#9;Τμήματα - Ιδρύματα -
                     Υπηρεσίες
                   </p>
@@ -45,7 +44,6 @@ export default function HomeGrid() {
               <Container fluid>
                 <Segment raised>
                   <p className="p-text-size-qa">
-                    {' '}
                     <Icon color="blue" name="book" size="big" /> &#9; e-βιβλιοθήκη
                   </p>
                 </Segment>
@@ -53,16 +51,15 @@ export default function HomeGrid() {
             </Link>
           </Grid.Column>
           <Grid.Column width={4}>
-            <Link>
+            <a href='https://vontikakis.com/el/ypologismos-misthou' target="_blank">
               <Container fluid>
                 <Segment raised>
                   <p className="p-text-size-qa">
-                    {' '}
-                    <Icon color="blue" name="newspaper" size="big" /> &#9; Eκστρατεια ενημέρωσης
+                    <Icon color='blue' name="calculator" size="big" /> &#9; Υπολογισμός καθαρού μισθού
                   </p>
                 </Segment>
               </Container>
-            </Link>
+            </a>
           </Grid.Column>
         </Grid.Row>
       </Grid>

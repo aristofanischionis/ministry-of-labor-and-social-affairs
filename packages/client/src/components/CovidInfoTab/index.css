@@ -1,8 +1,10 @@
 .style-covid-info {
     text-align: justify;
     text-justify: inter-word;
+    line-height: 1.8;
     padding-left: 1em;
     padding-right: 2em;
+    padding-top: 1em;
 }
 
 .style-text-initial{
@@ -14,9 +16,11 @@
     background-color: #fcefe6 !important;
 }
 .image-coloring-covinfo2{
-    background-color: #f3d8c5 !important;
+    background-color: #4b809e !important;
+    /* d5725b */
 }
 
 .text-spacing{
-    line-height: 0;
+    text-align: justify;
+    
 }

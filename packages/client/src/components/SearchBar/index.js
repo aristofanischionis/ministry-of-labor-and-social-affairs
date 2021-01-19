@@ -1,14 +1,6 @@
 import _ from 'lodash';
-// import faker from 'faker'
 import React from 'react';
-import {Search, Grid, Header, Segment} from 'semantic-ui-react';
-
-// const source = _.times(5, () => ({
-//   title: faker.company.companyName(),
-//   description: faker.company.catchPhrase(),
-//   image: faker.internet.avatar(),
-//   price: faker.finance.amount(0, 100, 2, '$'),
-// }))
+import {Search, Grid, Header, Segment, Label} from 'semantic-ui-react';
 
 const initialState = {
   loading: false,
@@ -49,10 +41,7 @@ export default function SearchBar() {
       const re = new RegExp(_.escapeRegExp(data.value), 'i');
       const isMatch = result => re.test(result.title);
 
-      // dispatch({
-      //   type: 'FINISH_SEARCH',
-      //   results: _.filter(source, isMatch),
-      // })
+
     }, 300);
   }, []);
   React.useEffect(() => {
@@ -62,8 +51,11 @@ export default function SearchBar() {
   }, []);
 
   return (
+   
     <Search
       loading={loading}
+      label='Αναζήτηση'
+      placeholder='Αναζήτηση'
       onResultSelect={(e, data) =>
         dispatch({type: 'UPDATE_SELECTION', selection: data.result.title})
       }
