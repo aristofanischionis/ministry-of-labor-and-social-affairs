@@ -18,8 +18,13 @@ const secret = process.env.SUPERSECRET
 app.use(cors())
 app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", process.env.ORIGIN || "*");
+    next();
+});
+  
 app.post("/api/register", async (req, res) => {
+
     // User data to register in db
     const first_name = req.body.first_name
     const last_name = req.body.last_name
@@ -73,7 +78,8 @@ app.post("/api/register", async (req, res) => {
     })  
 })
 
-app.get('/verifyToken', function(req, res) {
+app.get('/verifyToken', function (req, res) {
+
     const token = req.headers['x-access-token'];
     if (!token) return res.status(403).send({ auth: false, message: 'No token provided.' });
     

@@ -7,10 +7,10 @@ async function register()
     const push_data = {
         first_name: "Manos",
         last_name: "Manos_lastname",
-        email: "kostas@theo.gr",
+        email: "kostas1@theo.gr",
         password: "password"
     }
-    const res = await request.post("http://localhost:3001/api/register" , push_data)
+    const res = await request.post("https://eam-backend.herokuapp.com/api/register" , push_data)
     console.log("my respo", res)
     return res
 }
@@ -22,8 +22,8 @@ async function login()
         password: "password"
     }
     let isValid = false // if he/she is valid he/she can enter. 
-    const res = await request.post("http://localhost:3001/api/login" , push_data) //waiting for response
-    // console.log(res)
+    const res = await request.post("https://eam-backend.herokuapp.com/api/login" , push_data) //waiting for response
+    console.log(res)
 
     if(res.text == '{}') // if response text is empty then user does not exist.
         isValid = false
