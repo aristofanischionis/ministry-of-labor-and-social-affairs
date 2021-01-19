@@ -18,7 +18,7 @@ async function login()
 {
     //User data here in order to login.
     const push_data = {
-        email: "manos@gmail.com",
+        email: "kostas1@theo.gr",
         password: "password"
     }
     let isValid = false // if he/she is valid he/she can enter. 
@@ -33,5 +33,5 @@ async function login()
     console.log("User exists: "+isValid)
     return isValid
 }
-register()
-// login()
+// register()
+login()
