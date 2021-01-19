@@ -4,7 +4,7 @@ RUN mkdir -p /home/project/server
 WORKDIR /home/project/server
 
 ENV NODE_ENV production
-COPY ./packages/server .
+COPY . .
 RUN yarn install
 USER 1001
 # port for nodejs servers

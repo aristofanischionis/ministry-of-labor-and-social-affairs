@@ -5,7 +5,7 @@ WORKDIR /home/project/client
 
 RUN npm install -g serve
 ENV NODE_ENV production
-COPY ./packages/client .
+COPY . .
 RUN yarn install
 RUN yarn build
 USER 1001
