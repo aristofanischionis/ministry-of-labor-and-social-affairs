@@ -1,8 +1,9 @@
 import {
     SET_USER,
-    REMOVE_USER
+    REMOVE_USER,
+    ADD_RESERVATION
 } from './constants';
-import { user } from './definitions';
+import { user, reservation_details } from './definitions';
 
 export const setUserInStore = (user: user) =>({
     type: SET_USER,
@@ -13,4 +14,9 @@ export const removeUserFromStore = () =>({
     type: REMOVE_USER,
 }) as const;
 
-export type Action = ReturnType< typeof setUserInStore | typeof removeUserFromStore >
+export const addReservation = (details: reservation_details) =>({
+    type: ADD_RESERVATION,
+    details
+}) as const;
+
+export type Action = ReturnType< typeof setUserInStore | typeof removeUserFromStore | typeof addReservation>

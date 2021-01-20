@@ -3,16 +3,7 @@
 * you can run `yarn` in this folder and will take care of all dependencies of all packages and make sure to work
 
 ## TASKS
-- Reservation page !important
-- Fill with INFO !important
-- Employee & Ministry need valid info, like in Employer
-- Help page (render an under contruction page)
-- Breadcrumb: (Path) !important
-- Change covid info!
-- One more item dropdown -> Adeia eidikou skopou ktlp mia selida me 3 tabs
-- Use external file to host all text and import it and render it in pages
-- Before deploy set DEV and PROD envs and configure URL accordingly
-
+- Breadcrumb: (Path)
 
 ## Technologies & Rules
 - `yarn --version` --> 1.22.4

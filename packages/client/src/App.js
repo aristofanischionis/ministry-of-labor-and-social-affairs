@@ -24,6 +24,7 @@ import ΑllowanceCovid from './components/Information/ΑllowanceCovid';
 import Departments from './components/QuickAccessInfo/Departments';
 import AnnualLeave from './components/QuickAccessInfo/AnnualLeave';
 import Elibrary from './components/UnderConstructionLibrary';
+import Help from './components/Help';
 import {getToken, setUserSession, removeUserSession} from './utils/Common';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
@@ -84,6 +85,7 @@ const App = ({setUser, removeUser}) => {
           <Route exact path="/employer" component={Employer} />
           <Route exact path="/ministry" component={Ministry} />
           <Route exact path="/e-library" component={Elibrary} />
+          <Route exact path="/help" component={Help} />
           <Route exact path="/FAQ" component={Faq} />
           <Route exact path="/" component={Home} />
           <Route exact path="*" component={NotFoundPage} />

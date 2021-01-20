@@ -2,7 +2,7 @@ import React from 'react';
 import {Container} from 'semantic-ui-react';
 import {UserDetails} from './UserDetails';
 import {PersonalDetails} from './PersonalDetails';
-import {Success} from './Success';
+import Success from './Success';
 import {Form} from 'semantic-ui-react';
 
 export class Booking extends React.Component {

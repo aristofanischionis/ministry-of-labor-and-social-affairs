@@ -29,14 +29,14 @@ function UserDetails({values, handleChange, next}) {
           label="Όνομα"
           placeholder='Όνομα'
           defaultValue={firstName}
-          name="Όνομα"
+          name="firstName"
           onChange={handleClickFirstName}
         />
         <Form.Input
           label="Επώνυμο"
           placeholder='Επώνυμο'
           defaultValue={lastName}
-          name="Επώνυμο"
+          name="lastName"
           onChange={handleClickLastName}
         />
       </Form.Group>
@@ -49,7 +49,7 @@ function UserDetails({values, handleChange, next}) {
         placeholder="Επιλογή ειδικότητας"
         onChange={handleClickSpeciality}
       />
-      <Button onClick={next}>Next</Button>
+      <Button onClick={next}>Επόμενο</Button>
     </React.Fragment>
   );
 }

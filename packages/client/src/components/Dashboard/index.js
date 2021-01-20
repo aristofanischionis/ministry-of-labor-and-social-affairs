@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {Table, Grid, Image, Header, Button, Segment, Form, Container} from 'semantic-ui-react';
 import {setUserInStore} from '../../redux-store/actions';
-import {getUserFromStore} from '../../redux-store/selector';
+import {getUserFromStore, getReservations} from '../../redux-store/selector';
 
-const Dashboard = ({user, setUser}) => {
+const Dashboard = ({user, reservations, setUser}) => {
   const [loading, setLoading] = useState(false);
   const [first_name, setFirstName] = useState(user.first_name);
   const [last_name, setLastName] = useState(user.last_name);
@@ -22,6 +22,7 @@ const Dashboard = ({user, setUser}) => {
     // TODO: send update to DB
     // TODO: Change password
   };
+  
 
   return (
     <Grid>
@@ -43,7 +44,7 @@ const Dashboard = ({user, setUser}) => {
         </Grid.Row>
 
         <Grid.Row>
-          <Grid.Column width={8}>
+          <Grid.Column width={10}>
             <Segment>
               <Form loading={loading}>
                 <Form.Field onChange={e => setFirstName(e.target.value)}>
@@ -74,23 +75,32 @@ const Dashboard = ({user, setUser}) => {
     </Grid.Column>
     <Grid.Column width={5}>
       <Header style={{'padding-top':'3em'}} as='h3'>ΤΑ ΡΑΝΤΕΒΟΥ ΜΟΥ </Header>
-      <Table definition>
-      <Table.Header>
-        <Table.Row>
-          <Table.HeaderCell />
-          <Table.HeaderCell>Ώρα</Table.HeaderCell>
-          <Table.HeaderCell>Ημερομηνία 
-          </Table.HeaderCell>
-        </Table.Row>
-      </Table.Header>
-      <Table.Body>
-        <Table.Row>
-          <Table.Cell>Αποτελέσματα</Table.Cell>
-          <Table.Cell>None</Table.Cell>
-          <Table.Cell>Resets rating to default value</Table.Cell>
-        </Table.Row>
-      </Table.Body>
-    </Table>
+        {reservations.length !== 0 ? (
+          <Table definition>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell />
+            <Table.HeaderCell>Όνομα</Table.HeaderCell>
+            <Table.HeaderCell>Επώνυμο </Table.HeaderCell>
+            <Table.HeaderCell>Ημερομηνία</Table.HeaderCell>
+            <Table.HeaderCell>Ώρα</Table.HeaderCell>
+          </Table.Row>
+        </Table.Header>
+            <Table.Body>
+            {reservations.map(({ firstName, lastName, email, speciality, date, time }) => (
+              <Table.Row key={email}>
+                <Table.Cell>Αποτελέσματα</Table.Cell>
+                <Table.Cell>{firstName}</Table.Cell>
+                <Table.Cell>{lastName}</Table.Cell>
+                <Table.Cell>{date}</Table.Cell>
+                <Table.Cell>{time}</Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table>  
+        ) : (
+            <div>Δεν έχετε κανένα ραντεβού ακόμα!</div>
+      )}
     </Grid.Column>
     </Grid>
   );
@@ -98,18 +108,20 @@ const Dashboard = ({user, setUser}) => {
 
 Dashboard.propTypes = {
   user: PropTypes.object,
+  reservations: PropTypes.object,
   setUser: PropTypes.func,
 };
 
 export function mapDispatchToProps(dispatch) {
   return {
-    setUser: user => dispatch(setUserInStore(user)),
+    setUser: user => dispatch(setUserInStore(user))
   };
 }
 
 export default connect(
   state => ({
     user: getUserFromStore(state),
+    reservations: getReservations(state)
   }),
   mapDispatchToProps
 )(Dashboard);
