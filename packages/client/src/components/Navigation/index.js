@@ -21,6 +21,11 @@ export default function Navigation() {
           </Link>
         </Menu.Item>
         <Menu.Menu position="right">
+        < Menu.Item>
+            <Link style={{color: 'black'}} to="/">
+              Αρχική σελίδα
+            </Link>
+          </Menu.Item>
           <Menu.Item>
             <Link style={{color: 'black'}} to="/employer">
               Εργοδότης

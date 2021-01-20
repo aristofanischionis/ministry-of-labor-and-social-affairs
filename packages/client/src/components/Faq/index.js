@@ -15,7 +15,7 @@ const Level2Content = (
     είναι{' '}
   </div>
 );
-const Level3Content = <div>Εεεε, Μάνο;</div>;
+const Level3Content = <div>Stay @ 127.0.0.1. <br/> Use a 255.0.0.0</div>;
 const Level4Content = (
   <div>
     Οι επιχειρήσεις υπεραγορών (super market) για όσο διάστημα ισχύουν τα περιοριστικά μέτρα και έως
@@ -93,7 +93,7 @@ const rootPanels = [
     title: 'Ξέχασα τον κωδικό μου. Πως τον επανακτώ;',
     content: {content: Level2Content},
   },
-  {key: 'panel-3', title: 'Θα περάσουμε το μάθημα;', content: {content: Level3Content}},
+  {key: 'panel-3', title: 'Μέτρα πρόληψης', content: {content: Level3Content}},
   {
     key: 'panel-4',
     title:

@@ -26,19 +26,21 @@ function UserDetails({values, handleChange, next}) {
       <h1 className="ui centered">Στοιχεία χρήστη</h1>
       <Form.Group widths="equal">
         <Form.Input
-          label="First Name"
+          label="Όνομα"
+          placeholder='Όνομα'
           defaultValue={firstName}
-          name="firstName"
+          name="Όνομα"
           onChange={handleClickFirstName}
         />
         <Form.Input
-          label="Last Name"
+          label="Επώνυμο"
+          placeholder='Επώνυμο'
           defaultValue={lastName}
-          name="lastName"
+          name="Επώνυμο"
           onChange={handleClickLastName}
         />
       </Form.Group>
-      <Form.Input label="Email" defaultValue={email} name="email" onChange={handleClickEmail} />
+      <Form.Input placeholder='Email' label="Email" defaultValue={email} name="email" onChange={handleClickEmail} />
       <Form.Select
         label="Ειδικότητα"
         name="speciality"

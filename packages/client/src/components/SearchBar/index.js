@@ -49,9 +49,10 @@ export default function SearchBar() {
   }, []);
 
   return (
+    <label for="siteSearch">
     <Search
       loading={loading}
-      label="Αναζήτηση"
+      id='siteSearch'
       placeholder="Αναζήτηση"
       onResultSelect={(e, data) =>
         dispatch({type: 'UPDATE_SELECTION', selection: data.result.title})
@@ -60,5 +61,6 @@ export default function SearchBar() {
       results={results}
       value={value}
     />
+    </label>
   );
 }

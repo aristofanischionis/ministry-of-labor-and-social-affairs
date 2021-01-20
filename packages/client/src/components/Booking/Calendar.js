@@ -12,19 +12,3 @@ Calendar.propTypes = {
 
 export {Calendar};
 
-// constructor(props) {
-//   super(props);
-
-//   this.state = {
-//     date: '',
-//     time: '',
-//     dateTime: '',
-//     datesRange: '',
-//   };
-// }
-
-// handleChange = (event, {name, value}) => {
-//   if (this.state.hasOwnProperty(name)) {
-//     this.setState({[name]: value});
-//   }
-// };

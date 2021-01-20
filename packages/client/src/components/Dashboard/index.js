@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {Grid, Image, Header, Button, Segment, Form} from 'semantic-ui-react';
+import {Table, Grid, Image, Header, Button, Segment, Form, Container} from 'semantic-ui-react';
 import {setUserInStore} from '../../redux-store/actions';
 import {getUserFromStore} from '../../redux-store/selector';
 
@@ -24,7 +24,9 @@ const Dashboard = ({user, setUser}) => {
   };
 
   return (
-    <Segment raised style={{padding: '1% 20%'}} vertical>
+    <Grid>
+    <Grid.Column width={10}>
+    <Container raised style={{padding: '1% 20%'}} vertical>
       <Grid centered>
         <Grid.Row>
           <Image size="small" src="https://react.semantic-ui.com/images/avatar/large/steve.jpg" />
@@ -68,7 +70,29 @@ const Dashboard = ({user, setUser}) => {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-    </Segment>
+    </Container>
+    </Grid.Column>
+    <Grid.Column width={5}>
+      <Header style={{'padding-top':'3em'}} as='h3'>ΤΑ ΡΑΝΤΕΒΟΥ ΜΟΥ </Header>
+      <Table definition>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell />
+          <Table.HeaderCell>Ώρα</Table.HeaderCell>
+          <Table.HeaderCell>Ημερομηνία 
+          </Table.HeaderCell>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Cell>Αποτελέσματα</Table.Cell>
+          <Table.Cell>None</Table.Cell>
+          <Table.Cell>Resets rating to default value</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+    </Grid.Column>
+    </Grid>
   );
 };
 

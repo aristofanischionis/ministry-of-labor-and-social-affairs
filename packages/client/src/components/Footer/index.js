@@ -69,9 +69,12 @@ const Footer = () => {
           <Col size={1}>
             <Col>
               {/* TODO: DO this  */}
-              <Link to="/europe#info">
-                <p style={{color: '#4d5bc9'}}>Ε.Ε.</p>
-              </Link>
+              <a href="https://gslegal.gov.gr/"
+              style={{color: '#4d5bc9'}}
+              target="_blank"
+              rel="Γενική Γραμματεία της Κυβέρνησης">
+                <p style={{color: '#4d5bc9'}}>Γενική Γραμματεία της Κυβέρνησης</p>
+              </a>
             </Col>
           </Col>
         </Row>
@@ -110,7 +113,6 @@ const Footer = () => {
           <Col size={1}></Col>
         </Row>
         <FooterDesc>
-          {' '}
           <u style={{color: 'black'}}>copyright &copy; 2020 by University of Athens</u>
         </FooterDesc>
       </FooterSection>

@@ -40,7 +40,7 @@ export default function HomeGrid() {
 
         <Grid.Row columns={2}>
           <Grid.Column width={4}>
-            <Link>
+            <Link to="/e-library">
               <Container fluid>
                 <Segment raised>
                   <p className="p-text-size-qa">

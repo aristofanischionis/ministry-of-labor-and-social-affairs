@@ -21,15 +21,15 @@ function PersonalDetails({handleChange, next, prev}) {
     <React.Fragment>
       <h1 className="ui centered">Επιλογή ημερομηνίας</h1>
       <DateInput
-        name="date"
-        placeholder="Date"
+        name="Ημερομηνία"
+        placeholder="Ημερομηνία"
         iconPosition="left"
         value={cur_date}
         onChange={handleClick}
       />
       <TimeInput
-        name="time"
-        placeholder="Time"
+        name="Ώρα"
+        placeholder="Ώρα"
         iconPosition="left"
         value={cur_time}
         onChange={handleClick}

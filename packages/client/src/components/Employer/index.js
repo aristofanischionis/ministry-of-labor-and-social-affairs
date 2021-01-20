@@ -36,14 +36,14 @@ export default function Employer() {
               onClick={handleItemClick}
             />
             <Menu.Item
-              name="Περισσότερα"
-              active={activeItem === 'Περισσότερα'}
+              name="Ασφαλιστικός οδηγός εργοδότη"
+              active={activeItem === 'Ασφαλιστικός οδηγός εργοδότη'}
               onClick={handleItemClick}
             />
           </Menu>
         </Grid.Column>
         <Grid.Column stretched width={10}>
-          <Segment textAlign={activeItem === 'Περισσότερα' && 'center'}>
+          <Segment >
             {activeItem === 'Ρύθμιση Οφειλών' && (
               <div>
                 {text1()}
@@ -97,13 +97,14 @@ export default function Employer() {
                 </Button>
               </div>
             )}
-            {activeItem === 'Περισσότερα' && (
+            {activeItem === 'Ασφαλιστικός οδηγός εργοδότη' && (
               <a
+                style={{color: '#4d5bc9'}}
                 href="http://www.ika.gr/gr/infopages/t-ikaetam/20150529_odhgos_ergodoth.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Περισσότερα
+                Κατεβάστε τον οδηγό <Icon name='file pdf outline' />
               </a>
             )}
           </Segment>

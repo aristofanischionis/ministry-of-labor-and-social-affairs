@@ -37,12 +37,16 @@ export default function Contact() {
               <Form>
                 <Form.Group widths="equal">
                   <Form.Input
+                    label='Όνομα:'
+                    id='όνομα'
                     fluid
                     placeholder="Όνομα"
                     onChange={e => setName(e.target.value)}
                     value={name}
                   />
                   <Form.Input
+                    label='Επίθετο:'
+                    id='επίθετο'
                     fluid
                     placeholder="Επίθετο"
                     onChange={e => setSurname(e.target.value)}
@@ -50,17 +54,21 @@ export default function Contact() {
                   />
                 </Form.Group>
                 <Form.Input
+                  label='Email:'
+                  id='email'
                   fluid
                   placeholder="Email"
                   onChange={e => setEmail(e.target.value)}
                   value={email}
                 />
                 <Form.TextArea
-                  placeholder="Μήνυμα"
+                  label='Μήνυμα:'
+                  id='μήνυμα'
+                  placeholder="Το μήνυμα σας εδώ..."
                   onChange={e => setText(e.target.value)}
                   value={text}
                 />
-                <Form.Button circular floated="right" color="blue" onClick={handleClick}>
+                <Form.Button circular floated="right" style={{'background-color': '#4d5bc9' , 'color':'white'}} onClick={handleClick}>
                   Αποστολή
                 </Form.Button>
               </Form>
